@@ -24,7 +24,9 @@ function myAccount() {
   return (
     <div>
     <div>My Account</div>
+    <h3>Name: {user?.displayName}</h3>
     <h3>Email: {user?.email}</h3>
+    <button onClick={() => auth.signOut()}>Sign Out</button>
     </div>
   )
 }
