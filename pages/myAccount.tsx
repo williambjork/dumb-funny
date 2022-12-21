@@ -6,11 +6,15 @@ import { useEffect } from 'react';
 
 function myAccount() {
 
+  const router = useRouter();
+
   const [user, loading] = useAuthState(auth);
 
   const getData = async () => {
     if (loading) return;
-    if(!user) console.log("noUser")
+    if(!user) {
+      router.push("/login")
+    }
   }
 
   useEffect(() => {
@@ -18,7 +22,10 @@ function myAccount() {
   }, [user, loading]);
   
   return (
+    <div>
     <div>My Account</div>
+    <h3>Email: {user?.email}</h3>
+    </div>
   )
 }
 

@@ -26,7 +26,8 @@ function Nav() {
             <Link href="/">About</Link>
             {user ? 
             <Link href="/myAccount">My Account</Link>
-            : <Link href="/login">Log In</Link>
+            : 
+            <Link href="/login">Log In</Link>
             }
         </nav>
     </div>
