@@ -14,13 +14,14 @@ export default function login() {
         try {
             const result = await signInWithPopup(auth, googleProvider);
             console.log(result.user)
+            router.push("/myAccount")
         } catch (error) {
             console.log("error")
         }
     }
 
    useEffect(() => {
-    user && router.push("/")
+    user && router.push("/myAccount")
    }), [];
 
   return (

@@ -12,8 +12,8 @@ export default function ProductList() {
   ];
 
   return (
-    <div>
-      <h2 className="text-xl font-bold">Products</h2>
+    <div className="mt-12 border border-x-slate-200 shadow-sm hover:shadow-lg">
+      <h2 className="text-2xl font-bold mt-3">Products</h2>
       <div>
         {products.map((product) => (
           <div className=" m-3">
