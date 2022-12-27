@@ -7,9 +7,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <div className="">
       <DumbFunnyProvider>
-        <Nav>
+        <Nav />
         <Component {...pageProps} />
-        </Nav>
+        
       </DumbFunnyProvider>
     </div>
   );

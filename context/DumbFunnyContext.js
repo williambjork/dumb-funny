@@ -12,15 +12,52 @@ const DumbFunnyProvider = ({ children }) => {
     const getUsers = async () => {
       const querySnapshot = await getDocs(collection(db, "users"));
 
-      querySnapshot.docs.map((doc) => console.log(doc.data()));
+      setUsers(
+        querySnapshot.docs.map((doc) => {
+          return {
+            id: doc.id,
+            data: {
+              ...doc.data(),
+            },
+          };
+        })
+      );
     };
 
     getUsers();
   }, []);
 
+  useEffect(() => {
+    const getPosts = async () => {
+      const querySnapshot = await getDocs(collection(db, "articles"));
+
+      setPosts(
+        querySnapshot.docs.map((doc) => {
+          return {
+            id: doc.id,
+            data: {
+              body: doc.data().body,
+              breif: doc.data().breif,
+              category: doc.data().category,
+              postLength: doc.data().postLength,
+              bannerImage: doc.data().bannerImage,
+              title: doc.data().title,
+              postedOn: doc.data().postedOn.toDate(),
+              author: doc.data().author,
+            },
+          };
+        })
+      );
+    };
+    getPosts();
+  }, []);
+
   return (
-    <DumbFunnyContext.Provider value={{posts, users}}> {children} </DumbFunnyContext.Provider>
-  )
+    <DumbFunnyContext.Provider value={{ posts, users }}>
+      {" "}
+      {children}{" "}
+    </DumbFunnyContext.Provider>
+  );
 };
 
 export { DumbFunnyContext, DumbFunnyProvider };

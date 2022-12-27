@@ -5,7 +5,7 @@ import {auth, db} from '../utils/firebase'
 import NavButton from "./NavButton"
 
 
-function Nav({children}) {
+function Nav() {
     
     const [user, loading] = useAuthState(auth);
 
