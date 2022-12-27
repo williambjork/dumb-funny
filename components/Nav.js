@@ -22,7 +22,7 @@ function Nav() {
   return (
     <div>
         <nav className='flex justify-center m-auto gap-12'>
-            <NavButton title={"Home"} url={'/index'}/>
+            <NavButton title={"Home"} url={'/'}/>
             <NavButton title={"Store"} url={'/store'}/>
             <NavButton className='mr-12' title={"Write"} url={'/write'}/>
             
@@ -33,7 +33,7 @@ function Nav() {
               
             </div>
             : 
-            <Link href="/login">Log In</Link>
+            <NavButton title={"Login"} url={"/login"} />
             }
         </nav>
     </div>

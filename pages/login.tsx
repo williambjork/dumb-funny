@@ -10,6 +10,7 @@ export default function login() {
     const router = useRouter();
 
     const googleProvider = new GoogleAuthProvider();
+    
     const GoogleLogin = async () => {
         try {
             const result = await signInWithPopup(auth, googleProvider);
