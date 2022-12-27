@@ -2,6 +2,7 @@ import Link from 'next/link'
 import React, { useEffect } from 'react'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import {auth, db} from '../utils/firebase'
+import NavButton from "./NavButton"
 
 
 function Nav() {
@@ -21,11 +22,16 @@ function Nav() {
   return (
     <div>
         <nav className='flex justify-center m-auto gap-12'>
-            <Link href="/">Home</Link>
-            <Link href="/store">Store</Link>
-            <Link href="/">About</Link>
+            <NavButton title={"Home"} url={'/index'}/>
+            <NavButton title={"Store"} url={'/store'}/>
+            <NavButton className='mr-12' title={"Write"} url={'/write'}/>
+            
             {user ? 
-            <Link href="/myAccount">My Account</Link>
+            <div>
+              
+              <NavButton title={"My Account"} url={'/myAccount'}/>
+              
+            </div>
             : 
             <Link href="/login">Log In</Link>
             }
