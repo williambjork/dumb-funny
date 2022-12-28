@@ -15,7 +15,7 @@ export default function ProductList() {
       <div>
       {products.map(product => (
           <div className=" m-3">
-          <Product key={product.data.id} title={product.data.title} price={product.data.price} />
+          <Product key={product.id} url={product.id} title={product.data.title} price={product.data.price} />
           </div>
         ))}
       </div>
