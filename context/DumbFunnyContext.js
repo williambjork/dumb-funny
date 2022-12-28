@@ -7,6 +7,7 @@ const DumbFunnyContext = createContext();
 const DumbFunnyProvider = ({ children }) => {
   const [users, setUsers] = useState([]);
   const [posts, setPosts] = useState([]);
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
     const getUsers = async () => {
@@ -52,8 +53,29 @@ const DumbFunnyProvider = ({ children }) => {
     getPosts();
   }, []);
 
+  useEffect(() => {
+    const getProducts = async () => {
+      const querySnapshot = await getDocs(collection(db, "products"));
+
+      setProducts(
+        querySnapshot.docs.map((doc) => {
+          return {
+            id: doc.id,
+            data: {
+              brand: doc.data().brand,
+              category: doc.data().category,
+              price: doc.data().price,
+              title: doc.data().title
+            },
+          };
+        })
+      );
+    };
+    getProducts();
+  }, []);
+
   return (
-    <DumbFunnyContext.Provider value={{ posts, users }}>
+    <DumbFunnyContext.Provider value={{ posts, users, products }}>
       {" "}
       {children}{" "}
     </DumbFunnyContext.Provider>
