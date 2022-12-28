@@ -10,9 +10,9 @@ export default function ProductList() {
   console.log( products);
 
   return (
-    <div className="mt-12 border border-x-slate-200 shadow-sm hover:shadow-lg">
+    <div className="mt-12 border  border-x-slate-200 shadow-sm hover:shadow-lg">
       <h2 className="text-2xl font-bold mt-3">Products</h2>
-      <div>
+      <div className="grid grid-flow-row">
       {products.map(product => (
           <div className=" m-3">
           <Product key={product.id} url={product.id} title={product.data.title} price={product.data.price} />
