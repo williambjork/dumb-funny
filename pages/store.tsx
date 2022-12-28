@@ -2,7 +2,7 @@ import React from "react";
 import ProductList from "../components/ProductList"
 
 
-function store() {
+export default function store() {
 
  
 
@@ -15,4 +15,4 @@ function store() {
   );
 }
 
-export default store;
+

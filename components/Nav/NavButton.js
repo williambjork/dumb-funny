@@ -1,7 +1,7 @@
 import { Router, useRouter } from 'next/router'
 import React from 'react'
 
-function NavButton({title, url}) {
+export default function NavButton({title, url}) {
 
     const router = useRouter()
 
@@ -11,10 +11,9 @@ function NavButton({title, url}) {
     }
 
   return (
-    <div>
+    <div className="text-sm border-emerald-500 px-3 py-1 font-bold rounded-lg bg-emerald-400 border">
         <button onClick={handleClick}>{title}</button>
     </div>
   )
 }
 
-export default NavButton
