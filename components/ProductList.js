@@ -15,7 +15,7 @@ export default function ProductList() {
       <div className="grid grid-flow-row">
       {products.map(product => (
           <div className=" m-3">
-          <Product key={product.id} url={product.id} title={product.data.title} price={product.data.price} />
+          <Product key={product.id} url={product.id} title={product.data.title} price={product.data.price} brand={product.data.brand} />
           </div>
         ))}
       </div>
