@@ -1,4 +1,4 @@
-import { Router, useRouter } from 'next/router'
+import { Router, useRouter } from 'next/navigation'
 import React from 'react'
 
 export default function NavButton({title, url}) {
