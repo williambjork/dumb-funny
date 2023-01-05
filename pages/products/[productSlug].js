@@ -3,9 +3,11 @@ import React from "react";
 import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
 
 export default function Product({ product }) {
+
+  console.log(product)
   return (
     <div>
-      <h1>Product!!!</h1>
+      <h1>{product.slug}</h1>
     </div>
   );
 }
@@ -60,7 +62,7 @@ export async function getStaticProps({params}) {
         product(where: { slug: $slug }) {
           id
           
-          name
+          
           price
           slug
           description {
@@ -75,7 +77,7 @@ export async function getStaticProps({params}) {
     },
   });
 
-  console.log("params",);
+  console.log("params", params);
 
   const product = data.data.product;
 
