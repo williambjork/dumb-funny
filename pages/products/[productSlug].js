@@ -25,7 +25,7 @@ export async function getStaticPaths() {
   const data = await client.query({
     query: gql`
       query PageProducts {
-        products {
+        products (first: 999) {
           brand
           price
           slug
