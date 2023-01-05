@@ -10,7 +10,7 @@ function WatchButton({url}) {
     } 
   return (
     <div className=''>
-    <button onClick={handleClick} className="hover:text-amber-500 px-3 py-1 text-sm font-bold">
+    <button onClick={handleClick} className="font-syne hover:text-amber-500 px-3 py-1 text-sm font-bold">
       WATCH
       </button>
 

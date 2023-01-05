@@ -12,7 +12,7 @@ export default function HomeButton({url}) {
   return (
     <div className=''>
     <button onClick={handleClick} 
-            className="border-black px-3 py-1 text-sm font-bold border hover:text-white hover:bg-black">
+            className="font-syne border-black px-3 py-1 text-sm font-bold border hover:text-white hover:bg-black">
         HOME
       </button>
 

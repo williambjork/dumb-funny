@@ -1,3 +1,42 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+    @font-face {
+        font-family: "Prompt";
+        src: url("../public/fonts/Prompt-Medium.ttf");
+        font-weight: 500;
+        font-display: swap;
+        font-style: normal;
+
+    }
+
+    @font-face {
+        font-family: "Inconsolata";
+        src: url("../public/fonts/Inconsolata-VariableFont.ttf");
+        font-weight: 500;
+        font-display: swap;
+        font-style: normal;
+
+    }
+
+    @font-face {
+        font-family: "SpaceMono";
+        src: url("../public/fonts/SpaceMono-Regular.ttf");
+        font-weight: 500;
+        font-display: swap;
+        font-style: normal;
+
+    }
+
+    @font-face {
+        font-family: "Syne";
+        src: url("../public/fonts/Syne-VariableFont.ttf");
+        font-weight: 500;
+        font-display: swap;
+        font-style: normal;
+
+    }
+
+ 

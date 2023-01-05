@@ -7,11 +7,20 @@ export default function Product({ product }) {
 
   console.log(product)
   return (
-    <div>
-      <h1 className="text-xl font-bold m-auto">{product.title}</h1>
-      <h2>{product.brand}</h2>
-      <p>${product.price}</p>
-      <Image src={product.image.url} height={product.image.height} width={product.image.width}/>
+    <div className="">
+      
+      <h1 className="text-xl font-spacemono font-bold m-auto">{product.title}</h1>
+      
+      <div className="font-inconsolata">
+       <h2>{product.brand} test testestet stuff and things and stuff</h2>
+      </div>
+
+      <div className="font-spacemono">
+        <p>${product.price}</p>
+      </div>
+      <div className="">
+        <Image src={product.image.url} height={500} width={500}/>
+      </div>
     </div>
   );
 }
@@ -26,10 +35,10 @@ export async function getStaticPaths() {
     query: gql`
       query PageProducts {
         products (first: 999) {
-          brand
           price
           slug
           title
+          brand
         }
       }
     `,
@@ -66,7 +75,6 @@ export async function getStaticProps({params}) {
         product(where: { slug: $slug }) {
           id
           title
-          brand
           price
           slug
           description {
@@ -77,6 +85,7 @@ export async function getStaticProps({params}) {
             width
             height
           }
+          brand
         }
       }
     

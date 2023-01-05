@@ -10,7 +10,7 @@ export default function ReadButton({url}) {
     } 
   return (
     <div className=''>
-    <button onClick={handleClick} className="hover:text-pink-500 px-3 py-1 text-sm font-bold">
+    <button onClick={handleClick} className="font-syne font-bold hover:text-pink-500 px-3 py-1 text-sm ">
       READ
       </button>
 

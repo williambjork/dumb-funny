@@ -12,7 +12,7 @@ export default function LoginButton({url}) {
   return (
     <div className=''>
     <button onClick={handleClick} 
-    className="hover:bg-black hover:text-white hover:border-black mr-3
+    className="font-syne hover:bg-black hover:text-white hover:border-black mr-3
                border-gray-300 rounded-full px-3 py-1 text-sm font-bold  border">
       
       

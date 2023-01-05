@@ -11,7 +11,7 @@ export default function MyAccountButton({url}) {
   return (
     <div className=''>
     <button onClick={handleClick} 
-    className="hover:bg-cyan-500 hover:border-cyan-500 hover:text-white hover:rounded-none
+    className="font-syne hover:bg-cyan-500 hover:border-cyan-500 hover:text-white hover:rounded-none
             border-gray-300 rounded-sm px-3 ml-3 py-1 text-sm font-bold  border">
       MYSELF
       </button>

@@ -6,7 +6,16 @@ module.exports = {
     './app/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        prompt: "Prompt, serif",
+        inconsolata: "Inconsolata, serif",
+        spacemono: "SpaceMono, serif",
+        spacemonobold: "SpaceMonoBold, serif",
+        syne: "Syne, serif"
+        
+      },
+    },
   },
   plugins: [],
 }
