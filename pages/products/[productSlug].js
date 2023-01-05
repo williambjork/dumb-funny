@@ -1,13 +1,17 @@
 import React from "react";
 
 import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
+import Image from "next/image";
 
 export default function Product({ product }) {
 
   console.log(product)
   return (
     <div>
-      <h1>{product.slug}</h1>
+      <h1 className="text-xl font-bold m-auto">{product.title}</h1>
+      <h2>{product.brand}</h2>
+      <p>${product.price}</p>
+      <Image src={product.image.url} height={product.image.height} width={product.image.width}/>
     </div>
   );
 }
@@ -31,7 +35,7 @@ export async function getStaticPaths() {
     `,
   });
 
-  console.log('data', data)
+  console.log('data', data.slug)
 
   const paths = data.data.products.map((product) => {
     return {
@@ -61,12 +65,17 @@ export async function getStaticProps({params}) {
       query PageProduct($slug: String){
         product(where: { slug: $slug }) {
           id
-          
-          
+          title
+          brand
           price
           slug
           description {
             html
+          }
+          image {
+            url
+            width
+            height
           }
         }
       }
