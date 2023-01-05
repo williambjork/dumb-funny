@@ -1,11 +1,10 @@
-import React, { useContext } from "react";
-import { DumbFunnyContext } from "../context/DumbFunnyContext";
+import React from "react";
 import Product from "./Product"
 
 
-export default function ProductList() {
+export default function ProductList({ products }) {
 
-  const { products } = useContext(DumbFunnyContext);
+  
 
   console.log( products);
 
