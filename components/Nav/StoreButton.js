@@ -10,7 +10,8 @@ export default function StoreButton({url}) {
     } 
   return (
     <div className=''>
-    <button onClick={handleClick} className="font-syne hover:text-emerald-500 px-3 py-1 text-sm font-bold">
+    <button onClick={handleClick}  
+            className="font-syne  hover:text-emerald-500 px-3 py-1 text-sm font-bold">
       SHOP
       </button>
 
