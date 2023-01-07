@@ -21,16 +21,16 @@ export default function Product({ product }) {
           <Link href="" className="hover:text-pink-500">{product.brand}</Link>
         </div>
 
-        <div className="mt-6" dangerouslySetInnerHTML={{
+        <div className="mt-5" dangerouslySetInnerHTML={{
           __html: product.description.html
         }} />
 
-        <div className="font-spacemono mt-6">
+        <div className="font-spacemono mt-5">
           <p>${product.price}</p>
         </div>
 
         <div>
-          <button className="font-spacemono  border-2 mt-6 py-1 px-2 border-black
+          <button className="font-spacemono  border-2 mt-3 py-1 px-2 border-black
                              hover:bg-black hover:text-white border-dashed">Add to cart</button>
         </div>
         <div className="border-b border-black mt-10 max-w-xs"></div>

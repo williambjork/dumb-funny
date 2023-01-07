@@ -28,7 +28,7 @@ export default function Nav() {
 
   return (
     <div>
-      <nav className="grid grid-cols-3  md:top-0 justify-center m-auto  py-3 border-b">
+      <nav className="grid grid-cols-3 bg-stone-50 md:top-0 justify-center m-auto  py-3 border-b">
         <div className="flex-initial absolute left-12 ">
           <div className="min-w-12 hidden md:inline ">
             <Logo />
