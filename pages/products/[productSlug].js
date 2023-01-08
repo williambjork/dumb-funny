@@ -1,37 +1,56 @@
-import React from "react";
-
+import React, { useEffect, useState } from "react";
+import { shuffle } from 'lodash'
 import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
 import Image from "next/image";
 import Link from "next/link";
 
+const colors = [
+  'pink-500',
+  'red-500',
+  'emerald-500',
+]
+
+
 export default function Product({ product }) {
+
+  const [color, setColor] = useState();
+
+  function updateColor() {
+    setColor(shuffle(colors).pop());
+  }
+
+  useEffect(() => {
+    updateColor();
+  })
+  
   console.log(product);
+  console.log(color);
   return (
     
-    <div className="grid grid-cols-2 mt-20 ml-20 mr-12">
+    <div className="grid grid-cols-1 md:grid-cols-2 mt-20 ml-20 mr-12">
       <div className="col-start-1 justify-center m-auto">
         <Image src={product.image.url} height={500} width={500} />
       </div>
       <div className="col-start-2 mt-32 ml-12">
-        <h1 className="text-xl font-spacemono font-bold m-auto">
+        <h1 className={`text-xl text-${color} font-spacemono font-bold m-auto`}>
           {product.title}
         </h1>
 
         <div className="font-inconsolata mt-1 underline">
-          <Link href="" className="hover:text-pink-500">{product.brand}</Link>
+          <Link href="" className={`hover:text-${color}`}>{product.brand}</Link>
         </div>
 
         <div className="mt-5" dangerouslySetInnerHTML={{
           __html: product.description.html
         }} />
 
-        <div className="font-spacemono mt-5">
+        <div className={`font-spacemono  mt-5`}>
           <p>${product.price}</p>
         </div>
 
         <div>
-          <button className="font-spacemono  border-2 mt-3 py-1 px-2 border-black
-                             hover:bg-black hover:text-white border-dashed">Add to cart</button>
+          <button className={`font-spacemono  border-2 mt-3 py-1 px-2 border-${color}
+                             hover:bg-${color} hover:text-white border-dashed`}>Add to cart</button>
         </div>
         <div className="border-b border-black mt-10 max-w-xs"></div>
       </div>
