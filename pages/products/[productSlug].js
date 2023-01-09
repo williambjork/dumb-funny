@@ -15,13 +15,10 @@ export default function Product({ product }) {
 
   const [color, setColor] = useState();
 
-  function updateColor() {
-    setColor(shuffle(colors).pop());
-  }
 
   useEffect(() => {
-    updateColor();
-  })
+    setColor(shuffle(colors).pop());
+  }, [])
   
   console.log(product);
   console.log(color);
@@ -49,8 +46,8 @@ export default function Product({ product }) {
         </div>
 
         <div>
-          <button className={`font-spacemono  border-2 mt-3 py-1 px-2 border-${color}
-                             hover:bg-${color} hover:text-white border-dashed`}>Add to cart</button>
+          <button className={`font-spacemono  border-2 mt-3 py-1 px-2 border-emerald-500
+                             hover:cursor-cell hover:bg-emerald-500 hover:text-white border-dashed`}>Add to cart</button>
         </div>
         <div className="border-b border-black mt-10 max-w-xs"></div>
       </div>
