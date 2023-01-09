@@ -25,7 +25,8 @@ export default function Product({ product }) {
   return (
     
     <div className="grid grid-cols-1 md:grid-cols-2 mt-20 ml-20 mr-12">
-      <div className="col-start-1 justify-center m-auto">
+      <div className="col-start-1 justify-center m-auto
+                      ">
         <Image src={product.image.url} height={500} width={500} />
       </div>
       <div className="col-start-2 mt-32 ml-12">
@@ -41,13 +42,13 @@ export default function Product({ product }) {
           __html: product.description.html
         }} />
 
-        <div className={`font-spacemono  mt-5`}>
+        <div className={`font-spacemono slashed-zero mt-5`}>
           <p>${product.price}</p>
         </div>
 
         <div>
           <button className={`font-spacemono  border-2 mt-3 py-1 px-2 border-emerald-500
-                             hover:cursor-cell hover:bg-emerald-500 hover:text-white border-dashed`}>Add to cart</button>
+                              hover:cursor-cell hover:bg-emerald-500 hover:text-white border-dashed`}>Add to cart</button>
         </div>
         <div className="border-b border-black mt-10 max-w-xs"></div>
       </div>
