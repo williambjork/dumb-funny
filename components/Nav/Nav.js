@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Link from "next/link";
 import React, { useEffect } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -13,10 +13,14 @@ import MyAccountButton from "./MyAccountButton";
 import WatchButton from "./WatchButton";
 import ListenButton from "./ListenButton";
 import Logo from "../Logo";
-
+import { useSnipcart } from "use-snipcart";
+import { BsCart2 } from "react-icons/bs";
 
 export default function Nav() {
   const [user, loading] = useAuthState(auth);
+
+  const { cart = {} } = useSnipcart();
+  console.log(cart);
 
   const getData = async () => {
     if (loading) return;
@@ -34,7 +38,7 @@ export default function Nav() {
           <div className="min-w-12 hidden md:inline ">
             <Logo />
           </div>
-        </div> 
+        </div>
         <div className="col-start-2 col-span-2 flex ">
           <div className="mr-3">
             <HomeButton url="/" />
@@ -58,6 +62,22 @@ export default function Nav() {
               <SignUpButton url="/signup" />
             </>
           )}
+        </div>
+        <div className="font-spacemono flex absolute right-12">
+          
+          <div className="border border-black flex rounded-full pt-1 px-2 font-syne">
+            <div className="">
+              <BsCart2 />
+            </div>
+            <p className="ml-1 -mt-1">
+              {cart.items?.count}
+              </p>
+          </div>
+
+          <div className="ml-6">
+            <p>${cart?.subtotal}</p>
+          </div>
+
         </div>
       </nav>
     </div>
