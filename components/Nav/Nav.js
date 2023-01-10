@@ -13,14 +13,13 @@ import MyAccountButton from "./MyAccountButton";
 import WatchButton from "./WatchButton";
 import ListenButton from "./ListenButton";
 import Logo from "../Logo";
-import { useSnipcart } from "use-snipcart";
-import { BsCart2 } from "react-icons/bs";
+import Cart from "./Cart"
+
 
 export default function Nav() {
   const [user, loading] = useAuthState(auth);
 
-  const { cart = {} } = useSnipcart();
-  console.log(cart);
+  
 
   const getData = async () => {
     if (loading) return;
@@ -63,22 +62,10 @@ export default function Nav() {
             </>
           )}
         </div>
-        <div className="font-spacemono flex absolute right-12">
-          
-          <div className="border border-black flex rounded-full pt-1 px-2 font-syne">
-            <div className="">
-              <BsCart2 />
-            </div>
-            <p className="ml-1 -mt-1">
-              {cart.items?.count}
-              </p>
-          </div>
-
-          <div className="ml-6">
-            <p>${cart?.subtotal}</p>
-          </div>
-
-        </div>
+       <div className="absolute right-12">
+       <Cart />
+       </div>
+       
       </nav>
     </div>
   );
