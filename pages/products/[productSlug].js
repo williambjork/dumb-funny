@@ -1,66 +1,77 @@
 import React, { useEffect, useState } from "react";
-import { shuffle } from 'lodash'
+import { shuffle } from "lodash";
 import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
 import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
 
-const colors = [
-  'pink-500',
-  'red-500',
-  'emerald-500',
-]
-
+const colors = ["pink-500", "red-500", "emerald-500"];
 
 export default function Product({ product }) {
-
   const [color, setColor] = useState();
-
 
   useEffect(() => {
     setColor(shuffle(colors).pop());
-  }, [])
-  
+  }, []);
+
   console.log(product);
   console.log(color);
   return (
     <>
-    <Head>
-        <title>{ product.title }</title>
+      <Head>
+        <title>{product.title}</title>
         <meta name="description" content={`${product.title} is dumb funny`} />
-    </Head>
-    
-    <div className="grid grid-cols-1 md:grid-cols-2 mt-20 ml-20 mr-12">
-      <div className="col-start-1 justify-center m-auto
-                      ">
-        <Image src={product.image.url} height={500} width={500} />
+      </Head>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 mt-20 ml-20 mr-12">
+        <div
+          className="col-start-1 justify-center m-auto
+                      "
+        >
+          <Image src={product.image.url} height={500} width={500} />
+        </div>
+        <div className="col-start-2 mt-32 ml-12">
+          <h1
+            className={`text-xl text-${color} font-spacemono font-bold m-auto`}
+          >
+            {product.title}
+          </h1>
+
+          <div className="font-inconsolata mt-1 underline">
+            <Link href="" className={`hover:text-${color}`}>
+              {product.brand}
+            </Link>
+          </div>
+
+          <div
+            className="mt-5"
+            dangerouslySetInnerHTML={{
+              __html: product.description.html,
+            }}
+          />
+
+          <div className={`font-spacemono slashed-zero mt-5`}>
+            <p>${product.price}</p>
+          </div>
+
+          <div>
+            <button
+              className={`snipcart-add-item 
+                              font-spacemono  border-2 mt-3 py-1 px-2 border-${color}
+                              hover:cursor-cell hover:bg-${color} hover:text-white border-dashed`}
+              data-item-id="starry-night"
+              data-item-price="79.99"
+              data-item-description="High-quality replica of The Starry Night by the Dutch post-impressionist painter Vincent van Gogh."
+              data-item-image="/assets/images/starry-night.jpg"
+              data-item-name="The Starry Night"
+            >
+              Add to cart
+            </button>
+          </div>
+          <div className="border-b border-black mt-10 max-w-xs"></div>
+        </div>
       </div>
-      <div className="col-start-2 mt-32 ml-12">
-        <h1 className={`text-xl text-${color} font-spacemono font-bold m-auto`}>
-          {product.title}
-        </h1>
-
-        <div className="font-inconsolata mt-1 underline">
-          <Link href="" className={`hover:text-${color}`}>{product.brand}</Link>
-        </div>
-
-        <div className="mt-5" dangerouslySetInnerHTML={{
-          __html: product.description.html
-        }} />
-
-        <div className={`font-spacemono slashed-zero mt-5`}>
-          <p>${product.price}</p>
-        </div>
-
-        <div>
-          <button className={`font-spacemono  border-2 mt-3 py-1 px-2 border-${color}
-                              hover:cursor-cell hover:bg-${color} hover:text-white border-dashed`}>Add to cart</button>
-        </div>
-        <div className="border-b border-black mt-10 max-w-xs"></div>
-      </div>
-    </div>
     </>
-    
   );
 }
 
