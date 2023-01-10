@@ -3,6 +3,7 @@ import { shuffle } from 'lodash'
 import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
 import Image from "next/image";
 import Link from "next/link";
+import Head from "next/head";
 
 const colors = [
   'pink-500',
@@ -23,6 +24,11 @@ export default function Product({ product }) {
   console.log(product);
   console.log(color);
   return (
+    <>
+    <Head>
+        <title>{ product.title }</title>
+        <meta name="description" content={`${product.title} is dumb funny`} />
+    </Head>
     
     <div className="grid grid-cols-1 md:grid-cols-2 mt-20 ml-20 mr-12">
       <div className="col-start-1 justify-center m-auto
@@ -47,12 +53,13 @@ export default function Product({ product }) {
         </div>
 
         <div>
-          <button className={`font-spacemono  border-2 mt-3 py-1 px-2 border-emerald-500
-                              hover:cursor-cell hover:bg-emerald-500 hover:text-white border-dashed`}>Add to cart</button>
+          <button className={`font-spacemono  border-2 mt-3 py-1 px-2 border-${color}
+                              hover:cursor-cell hover:bg-${color} hover:text-white border-dashed`}>Add to cart</button>
         </div>
         <div className="border-b border-black mt-10 max-w-xs"></div>
       </div>
     </div>
+    </>
     
   );
 }
