@@ -59,11 +59,10 @@ export default function Product({ product }) {
               className={`snipcart-add-item 
                               font-spacemono  border-2 mt-3 py-1 px-2 border-${color}
                               hover:cursor-cell hover:bg-${color} hover:text-white border-dashed`}
-              data-item-id="starry-night"
-              data-item-price="79.99"
-              data-item-description="High-quality replica of The Starry Night by the Dutch post-impressionist painter Vincent van Gogh."
-              data-item-image="/assets/images/starry-night.jpg"
-              data-item-name="The Starry Night"
+              data-item-id={product.id}
+              data-item-price={product.price}
+              data-item-image={product.image.url}
+              data-item-name={product.title}
             >
               Add to cart
             </button>
