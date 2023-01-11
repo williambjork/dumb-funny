@@ -20,7 +20,7 @@ const Home: NextPage = ({ home }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <p className="font-spacemono">{home.heroText}</p>
+      <p className="font-spacemono pb-28">{home.heroText}</p>
 
       
     </div>

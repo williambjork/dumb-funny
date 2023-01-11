@@ -1,6 +1,7 @@
 import React from 'react'
 import { CgSmileUpside } from "react-icons/cg";
 import { BsGlobe } from "react-icons/bs";
+import Link from 'next/link';
 
 function Footer() {
   return (
@@ -12,8 +13,10 @@ function Footer() {
                       </div>
                       William Björk 2023 & Beyond
                       </div>
-                      <div className='absolute bottom-3 ml-3 '>
-                        <BsGlobe  size={20} />
+                      <div className='absolute bottom-3 ml-3 hover:animate-spin cursor-pointer'>
+                        <Link href="https://github.com/williambjork">
+                          <BsGlobe  size={20} />
+                        </Link>
                       </div>
                       </>
   )
