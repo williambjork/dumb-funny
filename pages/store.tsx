@@ -29,7 +29,7 @@ export async function getStaticProps() {
   const data = await client.query({
     query: gql`
       query Products {
-        products(first: 5) {
+        products(first: 100) {
           price
           slug
           title

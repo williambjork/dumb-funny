@@ -12,8 +12,11 @@ export default function Product({ title, price, url, brand, id, image }) {
     console.log("click")
   }
   return (
-    <div className="max-w-sm justify-center m-auto" onClick={handleClick}>
-      <div className="m-auto justify-items-center border p-3 rounded hover:shadow hover:bg-slate-100">
+    <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4
+                      max-w-sm justify-center m-auto" 
+                      onClick={handleClick}
+                      >
+      <div className="relative block overflow-hidden m-auto justify-items-center border-dashed border-2 px-12 border-black p-3  hover:shadow hover:bg-slate-100">
         <h2>{id}</h2>
         <h2 className="text-xl font-bold">{title}</h2>
         <div
@@ -25,7 +28,7 @@ export default function Product({ title, price, url, brand, id, image }) {
         <h3>Price: ${price}</h3>
         <h4>Brand: {brand}</h4>
 
-        <button className="border-2 rounded m-1 p-1 text-sm  bg-slate-200 hover:bg-slate-600 hover:text-white">
+        <button className="snipcart-add-item border-2 rounded m-1 p-1 text-sm  bg-slate-200 hover:bg-slate-600 hover:text-white">
           Add to cart
         </button>
       </div>
