@@ -1,18 +1,24 @@
 import React from "react";
 import ProductList from "../components/ProductList";
 import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
-
+import Product from "../components/Product";
+import { imageConfigDefault } from "next/dist/shared/lib/image-config";
 
 export default function store({ products }) {
+  console.log(products)
   return (
     <div className="">
-      <main className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center">
-        <ProductList products={products} />
-      </main>
+      <h2 className="text-2xl font-bold mt-3">Products</h2>
+      <div className="grid grid-flow-row">
+      {products.map(product => (
+          <div className=" m-3">
+          <Product key={product.id} url={product.slug} image={product.image.url}  price={product.price} brand={product.brand} />
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
-
 
 export async function getStaticProps() {
   const client = new ApolloClient({
@@ -20,32 +26,27 @@ export async function getStaticProps() {
     cache: new InMemoryCache(),
   });
 
-  
   const data = await client.query({
     query: gql`
-    query ProductsQuery {
-      products {
-        brand
-        price
-        title
-        slug
-        image {
-          url
+      query Products {
+        products(first: 5) {
+          price
+          slug
+          title
+          brand
+          image {
+            url
+          }
         }
       }
-    }
-    
-    `
+    `,
   });
 
-  
-  
-  const products = data.data.product;
-  
+  const products = data.data.products;
 
   return {
     props: {
       products,
     },
-  }; 
+  };
 }

@@ -62,9 +62,9 @@ export default function Nav() {
             </>
           )}
         </div>
-       <div className="absolute right-12">
-       <Cart />
-       </div>
+          <div className="absolute right-12">
+            <Cart />
+          </div>
        
       </nav>
     </div>

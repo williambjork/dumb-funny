@@ -1,7 +1,8 @@
+import Image from "next/image";
 import { Router, useRouter } from "next/router";
 import React from "react";
 
-export default function Product({ title, price, url, brand }) {
+export default function Product({ title, price, url, brand, id, image }) {
 
   const router = useRouter()
 
@@ -11,9 +12,16 @@ export default function Product({ title, price, url, brand }) {
     console.log("click")
   }
   return (
-    <div onClick={handleClick}>
-      <div className="border p-3 rounded hover:shadow hover:bg-slate-100">
+    <div className="max-w-sm justify-center m-auto" onClick={handleClick}>
+      <div className="m-auto justify-items-center border p-3 rounded hover:shadow hover:bg-slate-100">
+        <h2>{id}</h2>
         <h2 className="text-xl font-bold">{title}</h2>
+        <div
+          className="col-start-1 justify-center m-auto
+                      "
+        >
+          <Image src={image} height={200} width={200} />
+        </div>
         <h3>Price: ${price}</h3>
         <h4>Brand: {brand}</h4>
 
