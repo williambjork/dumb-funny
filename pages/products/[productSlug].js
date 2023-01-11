@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
 
-const colors = ["pink-500", "red-500", "emerald-500"];
+const colors = ["pink-500", "red-500", "emerald-500", "cyan-500"];
 
 export default function Product({ product }) {
   const [color, setColor] = useState();
