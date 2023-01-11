@@ -6,8 +6,8 @@ export default function ProductList({ products }) {
 
   return (
     <div
-      className=" grid grid-flow-row md:grid-cols-2 gap-4
-                      max-w-xl justify-center m-auto"
+      className=" grid grid-flow-row md:grid-cols-2 xl:grid-cols-3 gap-4
+                      max-w-2xl justify-center m-auto"
     >
       {products.map((product) => (
         <div className=" m-3">
