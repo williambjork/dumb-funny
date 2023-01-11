@@ -5,9 +5,9 @@ import { BsGlobe } from "react-icons/bs";
 function Footer() {
   return (
     <>
-    <div className='flex font-spacemono -rotate-90 text-xs absolute bottom-28 -right-7 -mr-14
+    <div className='flex  font-spacemono -rotate-90 text-xs absolute bottom-28 -right-7 -mr-14
                     hover:skew-y-3 hover:cursor-default'>
-                      <div className='mr-1 mt-xs rotate-90'>
+                      <div className='mr-2 mt-sm  rotate-90'>
                       <CgSmileUpside />
                       </div>
                       William Björk 2023 & Beyond

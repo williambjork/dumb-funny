@@ -12,7 +12,7 @@ export default function store({ products }) {
       <div className="grid grid-flow-row">
       {products.map(product => (
           <div className=" m-3">
-          <Product key={product.id} url={product.slug} image={product.image.url}  price={product.price} brand={product.brand} />
+          <Product key={product.id} url={product.slug} title={product.title} image={product.image.url}  price={product.price} brand={product.brand} />
           </div>
         ))}
       </div>

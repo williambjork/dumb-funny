@@ -28,7 +28,7 @@ export default function Product({ product }) {
           className="col-start-1 justify-center m-auto
                       "
         >
-          <Image src={product.image.url} height={500} width={500} />
+          <Image  src={product.image.url} height={500} width={500} />
         </div>
         <div className="col-start-2 mt-32 ml-12">
           <h1
