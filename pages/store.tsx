@@ -1,7 +1,7 @@
 import React from "react";
 import ProductList from "../components/ProductList";
 import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
-import Product from "../components/Product";
+import ProductCard from "../components/ProductCard";
 import { imageConfigDefault } from "next/dist/shared/lib/image-config";
 
 export default function store({ products }) {
@@ -9,13 +9,9 @@ export default function store({ products }) {
   return (
     <div className="">
       <h2 className="text-2xl font-bold mt-3">Products</h2>
-      <div className="grid grid-flow-row">
+      <div className="">
         
-      {products.map(product => (
-          <div className=" m-3">
-          <Product key={product.id} url={product.slug} title={product.title} image={product.image.url}  price={product.price} brand={product.brand} />
-          </div>
-        ))}
+      <ProductList products={products} />
       </div>
     </div>
   );

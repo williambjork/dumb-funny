@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Router, useRouter } from "next/router";
 import React from "react";
 
-export default function Product({ title, price, url, brand, id, image }) {
+export default function ProductCard({ title, price, url, brand, id, image }) {
 
   const router = useRouter()
 
@@ -12,15 +12,12 @@ export default function Product({ title, price, url, brand, id, image }) {
     console.log("click")
   }
   return (
-    <div className="container mx-auto grid grid-cols-2 gap-4
-                      max-w-xl justify-center m-auto" 
-                      onClick={handleClick}
-                      >
-      <div className="relative block overflow-hidden m-auto justify-items-center border-dashed hover:border-solid border-2 px-12 border-black p-3 cursor-pointer hover:shadow ">
-      
+    
+      <div className="  border-dashed hover:border-solid border-2 px-12 border-black p-3 cursor-pointer hover:shadow "
+             onClick={handleClick}>
         
         <div
-          className="col-start-1 justify-center m-auto
+          className="
                       "
         >
           <Image src={image} height={200} width={200} />
@@ -33,6 +30,6 @@ export default function Product({ title, price, url, brand, id, image }) {
           Add to cart
         </button>
       </div>
-    </div>
+    
   );
 }

@@ -15,7 +15,7 @@ export default function Product({ product }) {
   }, []);
 
   console.log(product);
-  console.log(color);
+  console.log(product.categories.name);
   return (
     <>
       <Head>
@@ -24,6 +24,8 @@ export default function Product({ product }) {
       </Head>
 
       <div className="grid grid-cols-1 md:grid-cols-2 mt-20 ml-20 mr-12">
+
+        <p>{product.categories.name}</p>
         <div
           className="col-start-1 justify-center m-auto
                       "
@@ -32,7 +34,7 @@ export default function Product({ product }) {
         </div>
         <div className="col-start-2 mt-32 ml-12">
           <h1
-            className={`text-xl text-${color} font-spacemono font-bold m-auto`}
+            className={`text-xl font-spacemono font-bold m-auto`}
           >
             {product.title}
           </h1>
@@ -57,8 +59,8 @@ export default function Product({ product }) {
           <div>
             <button
               className={`snipcart-add-item 
-                              font-spacemono  border-2 mt-3 py-1 px-2 border-${color}
-                              hover:cursor-cell hover:bg-${color} hover:text-white border-dashed`}
+                              font-spacemono  border-2 mt-3 py-1 px-2 border-emerald-500
+                              hover:cursor-cell hover:bg-emerald-500 hover:text-white border-dashed`}
               data-item-id={product.id}
               data-item-price={product.price}
               data-item-image={product.image.url}
@@ -88,6 +90,7 @@ export async function getStaticPaths() {
           slug
           title
           brand
+          
         }
       }
     `,
@@ -123,6 +126,10 @@ export async function getStaticProps({ params }) {
           title
           price
           slug
+          categories {
+            name
+            slug
+          }
           description {
             html
           }

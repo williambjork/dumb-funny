@@ -1,25 +1,26 @@
 import React from "react";
-import Product from "./Product"
-
+import ProductCard from "./ProductCard";
 
 export default function ProductList({ products }) {
-
-  
-
-  console.log( products);
+  console.log(products);
 
   return (
-    <div className="mt-12 border  border-x-slate-200 shadow-sm hover:shadow-lg">
-      <h2 className="text-2xl font-bold mt-3">Products</h2>
-      <div className="grid grid-flow-row">
-      {products.map(product => (
-          <div className=" m-3">
-          <Product key={product.id} url={product.id} title={product.data.title} price={product.data.price} brand={product.data.brand} />
-          </div>
-        ))}
-      </div>
+    <div
+      className=" grid grid-flow-row md:grid-cols-2 gap-4
+                      max-w-xl justify-center m-auto"
+    >
+      {products.map((product) => (
+        <div className=" m-3">
+          <ProductCard
+            key={product.id}
+            url={product.slug}
+            title={product.title}
+            image={product.image.url}
+            price={product.price}
+            brand={product.brand}
+          />
+        </div>
+      ))}
     </div>
   );
 }
-
-
