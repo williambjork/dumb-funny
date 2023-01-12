@@ -15,7 +15,9 @@ export default function ProductCard({ title, price, url, brand, id, image }) {
       className="w-12/12 border-dashed hover:border-solid border-2 px-12 border-black p-3 cursor-pointer hover:shadow "
       onClick={handleClick}
     >
-      <Image src={image} height={200} width={200} />
+      <div className="object-">
+        <Image  src={image} height={300} width={300} />
+      </div>
 
       <h3 className="font-spacemono font-bold">{title}</h3>
       <h4 className="text-sm underline">{brand}</h4>
