@@ -46,7 +46,7 @@ export default function Product({ product }) {
           </div>
 
           <div
-            className="mt-5"
+            className="mt-5 max-w-sm font-inconsolata"
             dangerouslySetInnerHTML={{
               __html: product.description.html,
             }}
@@ -59,7 +59,7 @@ export default function Product({ product }) {
           <div>
             <button
               className={`snipcart-add-item 
-                              font-spacemono  border-2 mt-3 py-1 px-2 border-emerald-500
+                              font-spacemono  border-2 mt-2 py-1 px-2 border-emerald-500
                               hover:cursor-cell hover:bg-emerald-500 hover:text-white border-dashed`}
               data-item-id={product.id}
               data-item-price={product.price}
@@ -69,7 +69,20 @@ export default function Product({ product }) {
               Add to cart
             </button>
           </div>
-          <div className="border-b border-black mt-10 max-w-xs"></div>
+          <div className="border-b border-black mt-8 max-w-xs"></div>
+
+            <div className="flex gap-3 mt-4 font-syne cursor-pointer">
+              <p className="border border-black rounded-full p-1 px-3
+                            hover:bg-black hover:text-white">XS</p>
+              <p className="border border-black rounded-full p-1 px-3
+                            hover:bg-black hover:text-white">S</p>
+              <p className="border border-black rounded-full p-1 px-3
+                            hover:bg-black hover:text-white">M</p>
+              <p className="border border-black rounded-full p-1 px-3
+                            hover:bg-black hover:text-white">L</p>
+              <p className="border border-black rounded-full p-1 px-3
+                            hover:bg-black hover:text-white">XXL</p>
+            </div>
         </div>
       </div>
     </>
