@@ -4,11 +4,13 @@ import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
 import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
+import SizeButton from "../../components/SizeButton";
 
 const colors = ["pink-500", "red-500", "emerald-500", "cyan-500"];
 
 export default function Product({ product }) {
   const [color, setColor] = useState();
+  const [ selected, setSelected ] = useState()
 
   useEffect(() => {
     setColor(shuffle(colors).pop());
@@ -71,17 +73,15 @@ export default function Product({ product }) {
           </div>
           <div className="border-b border-black mt-8 max-w-xs"></div>
 
-            <div className="flex gap-3 mt-4 font-syne cursor-pointer">
-              <p className="border border-black rounded-full p-1 px-3
-                            hover:bg-black hover:text-white">XS</p>
-              <p className="border border-black rounded-full p-1 px-3
-                            hover:bg-black hover:text-white">S</p>
-              <p className="border border-black rounded-full p-1 px-3
-                            hover:bg-black hover:text-white">M</p>
-              <p className="border border-black rounded-full p-1 px-3
-                            hover:bg-black hover:text-white">L</p>
-              <p className="border border-black rounded-full p-1 px-3
-                            hover:bg-black hover:text-white">XXL</p>
+            <div className='flex gap-3 mt-8 font-syne cursor-pointer
+                            '>
+              <SizeButton size="XS"/>
+              <SizeButton size="S"/>
+              <SizeButton size="M"/>
+              <SizeButton size="L"/>
+              <SizeButton size="XL"/>
+              <SizeButton size="XXL"/>
+              
             </div>
         </div>
       </div>
