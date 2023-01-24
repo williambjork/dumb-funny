@@ -12,9 +12,14 @@ export default function Product({ product }) {
   const [color, setColor] = useState();
   const [ selected, setSelected ] = useState()
 
-  useEffect(() => {
+  /* useEffect(() => {
     setColor(shuffle(colors).pop());
-  }, []);
+  }, []); */
+
+  const handleClick = (size) => {
+    setSelected(size)
+    console.log(size)
+} 
 
   console.log(product);
   console.log(product.categories.name);
@@ -75,12 +80,12 @@ export default function Product({ product }) {
 
             <div className='flex gap-3 mt-8 font-syne cursor-pointer
                             '>
-              <SizeButton size="XS"/>
-              <SizeButton size="S"/>
-              <SizeButton size="M"/>
-              <SizeButton size="L"/>
-              <SizeButton size="XL"/>
-              <SizeButton size="XXL"/>
+              <SizeButton onClick={() => handleClick("XS")} size="XS"/>
+              <SizeButton onClick={() => handleClick("S")} size="S"/>
+              <SizeButton onClick={() => handleClick("M")} size="M"/>
+              <SizeButton onClick={() => handleClick("L")} size="L"/>
+              <SizeButton onClick={() => handleClick("XL")} size="XL"/>
+              <SizeButton onClick={() => handleClick("XXL")} size="XXL"/>
               
             </div>
         </div>
