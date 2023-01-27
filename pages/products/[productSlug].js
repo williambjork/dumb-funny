@@ -10,19 +10,19 @@ const colors = ["pink-500", "red-500", "emerald-500", "cyan-500"];
 
 export default function Product({ product }) {
   const [color, setColor] = useState();
-  const [ selected, setSelected ] = useState()
+  const [ selectedSize, setSelectedSize ] = useState()
 
   /* useEffect(() => {
     setColor(shuffle(colors).pop());
   }, []); */
 
-  const handleClick = (size) => {
-    setSelected(size)
+  function handleSizeSelection(size) {
+    setSelectedSize(size)
     console.log(size)
 } 
 
   console.log(product);
-  console.log(product.categories.name);
+  
   return (
     <>
       <Head>
@@ -72,6 +72,10 @@ export default function Product({ product }) {
               data-item-price={product.price}
               data-item-image={product.image.url}
               data-item-name={product.title}
+              data-item-custom2-name="Size"
+              data-item-custom2-options="XS|S|M|L|XL|XXL"
+              data-item-custom2-value={selectedSize}
+
             >
               Add to cart
             </button>
@@ -80,12 +84,12 @@ export default function Product({ product }) {
 
             <div className='flex gap-3 mt-8 font-syne cursor-pointer
                             '>
-              <SizeButton onClick={() => handleClick("XS")} size="XS"/>
-              <SizeButton onClick={() => handleClick("S")} size="S"/>
-              <SizeButton onClick={() => handleClick("M")} size="M"/>
-              <SizeButton onClick={() => handleClick("L")} size="L"/>
-              <SizeButton onClick={() => handleClick("XL")} size="XL"/>
-              <SizeButton onClick={() => handleClick("XXL")} size="XXL"/>
+              <SizeButton handleSizeSelection={() => handleSizeSelection("XS")} size="XS"/>
+              <SizeButton handleSizeSelection={() => handleSizeSelection("S")} size="S"/>
+              <SizeButton handleSizeSelection={() => handleSizeSelection("M")} size="M"/>
+              <SizeButton handleSizeSelection={() => handleSizeSelection("L")} size="L"/>
+              <SizeButton handleSizeSelection={() => handleSizeSelection("XL")} size="XL"/>
+              <SizeButton handleSizeSelection={() => handleSizeSelection("XXL")} size="XXL"/>
               
             </div>
         </div>
