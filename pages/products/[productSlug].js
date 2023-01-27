@@ -11,15 +11,19 @@ const colors = ["pink-500", "red-500", "emerald-500", "cyan-500"];
 export default function Product({ product }) {
   const [color, setColor] = useState();
   const [ selectedSize, setSelectedSize ] = useState()
+  const [selected, setSelected ] = useState(false);
 
   /* useEffect(() => {
     setColor(shuffle(colors).pop());
   }, []); */
 
   function handleSizeSelection(size) {
-    setSelectedSize(size)
-    console.log(size)
+    setSelected(!selected)
+    setSelectedSize(size);
+    console.log(size);
 } 
+
+
 
   console.log(product);
   
@@ -84,12 +88,12 @@ export default function Product({ product }) {
 
             <div className='flex gap-3 mt-8 font-syne cursor-pointer
                             '>
-              <SizeButton handleSizeSelection={() => handleSizeSelection("XS")} size="XS"/>
-              <SizeButton handleSizeSelection={() => handleSizeSelection("S")} size="S"/>
-              <SizeButton handleSizeSelection={() => handleSizeSelection("M")} size="M"/>
-              <SizeButton handleSizeSelection={() => handleSizeSelection("L")} size="L"/>
-              <SizeButton handleSizeSelection={() => handleSizeSelection("XL")} size="XL"/>
-              <SizeButton handleSizeSelection={() => handleSizeSelection("XXL")} size="XXL"/>
+              <SizeButton handleSizeSelection={() => handleSizeSelection("XS")} isSelected={selected} size="XS"/>
+              <SizeButton handleSizeSelection={() => handleSizeSelection("S")} isSelected={selected} size="S"/>
+              <SizeButton handleSizeSelection={() => handleSizeSelection("M")} isSelected={selected} size="M"/>
+              <SizeButton handleSizeSelection={() => handleSizeSelection("L")} isSelected={selected} size="L"/>
+              <SizeButton handleSizeSelection={() => handleSizeSelection("XL")} isSelected={selected} size="XL"/>
+              <SizeButton handleSizeSelection={() => handleSizeSelection("XXL")} isSelected={selected} size="XXL"/>
               
             </div>
         </div>
