@@ -10,25 +10,17 @@ const colors = ["pink-500", "red-500", "emerald-500", "cyan-500"];
 
 export default function Product({ product }) {
   const [color, setColor] = useState();
-  //const [selectedSize, setSelectedSize] = useState();
+  const [selectedSize, setSelectedSize] = useState();
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   /* useEffect(() => {
     setColor(shuffle(colors).pop());
   }, []); */
 
-  /* function handleSizeSelection(size) {
-    setSelectedSize(size);
-    console.log(size);
-  } */
-
-  function handleIndex(index) {
+  function handleClick(index, size) {
     setSelectedIndex(index);
-    console.log(index)
+    setSelectedSize(size);
   }
-
-  console.log(product.sizes[0]?.stock.inventory);
-  console.log(selectedIndex);
 
   return (
     <>
@@ -78,7 +70,7 @@ export default function Product({ product }) {
               data-item-name={product.title}
               data-item-custom2-name="Size"
               data-item-custom2-options="XS|S|M|L|XL|XXL"
-              //data-item-custom2-value={selectedSize}
+              data-item-custom2-value={selectedSize}
             >
               Add to cart
             </button>
@@ -90,64 +82,58 @@ export default function Product({ product }) {
                             "
           >
             <SizeButton
-              //handleSizeSelection={() => handleSizeSelection("XS")}
               outOfStock={
                 product.sizes[0]?.stock.inventory === 0 ? true : false
               }
+              size="XS"
               index={1}
               isSelected={selectedIndex === 1}
-              handleIndex={handleIndex}
-              size="XS"
+              handleClick={handleClick}
             />
             <SizeButton
-             // handleSizeSelection={() => handleSizeSelection("S")}
               outOfStock={
                 product.sizes[1]?.stock.inventory === 0 ? true : false
               }
+              size="S"
               index={2}
               isSelected={selectedIndex === 2}
-              handleIndex={handleIndex}
-              size="S"
+              handleClick={handleClick}
             />
             <SizeButton
-             // handleSizeSelection={() => handleSizeSelection("M")}
               outOfStock={
                 product.sizes[2]?.stock.inventory === 0 ? true : false
               }
+              size="M"
               index={3}
               isSelected={selectedIndex === 3}
-              handleIndex={handleIndex}
-              size="M"
+              handleClick={handleClick}
             />
             <SizeButton
-             // handleSizeSelection={() => handleSizeSelection("L")}
               outOfStock={
                 product.sizes[3]?.stock.inventory === 0 ? true : false
               }
+              size="L"
               index={4}
               isSelected={selectedIndex === 4}
-              handleIndex={handleIndex}
-              size="L"
+              handleClick={handleClick}
             />
             <SizeButton
-             // handleSizeSelection={() => handleSizeSelection("XL")}
               outOfStock={
                 product.sizes[4]?.stock.inventory === 0 ? true : false
               }
+              size="XL"
               index={5}
               isSelected={selectedIndex === 5}
-              handleIndex={handleIndex}
-              size="XL"
+              handleClick={handleClick}
             />
             <SizeButton
-            //  handleSizeSelection={() => handleSizeSelection("XXL")}
               outOfStock={
                 product.sizes[5]?.stock.inventory === 0 ? true : false
               }
+              size="XXL"
               index={6}
               isSelected={selectedIndex === 6}
-              handleIndex={handleIndex}
-              size="XXL"
+              handleClick={handleClick}
             />
           </div>
         </div>
