@@ -12,7 +12,7 @@ export default function ProductCard({ title, price, url, brand, id, image }) {
   };
   return (
     <div
-      className="w-12/12 border-dashed hover:border-solid border-2 px-12 border-black p-3 cursor-pointer hover:shadow "
+      className="w-12/12 hover:border-dashed  hover:border-2 px-12 border-black p-3 cursor-pointer hover:shadow "
       onClick={handleClick}
     >
       <div className="object-">
