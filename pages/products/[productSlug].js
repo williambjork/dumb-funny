@@ -10,14 +10,14 @@ const colors = ["pink-500", "red-500", "emerald-500", "cyan-500"];
 
 export default function Product({ product }) {
   const [color, setColor] = useState();
-  const [ selected, setSelected ] = useState()
+  const [ size, setSize ] = useState()
 
   useEffect(() => {
     setColor(shuffle(colors).pop());
   }, []);
 
-  console.log(product);
-  console.log(product.categories.name);
+  console.log(size);
+
   return (
     <>
       <Head>
@@ -75,7 +75,7 @@ export default function Product({ product }) {
 
             <div className='flex gap-3 mt-8 font-syne cursor-pointer
                             '>
-              <SizeButton size="XS"/>
+              <SizeButton onClick={() => {console.log("click")}} size="XS"/>
               <SizeButton size="S"/>
               <SizeButton size="M"/>
               <SizeButton size="L"/>
