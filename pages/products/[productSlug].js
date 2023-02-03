@@ -5,15 +5,17 @@ import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
 import SizeButton from "../../components/SizeButton";
+import { FaCcAmex, FaCcMastercard, FaCcStripe, FaCcVisa } from "react-icons/fa";
+import { BsFillSuitHeartFill, BsSuitHeart, BsSuitHeartFill } from "react-icons/bs"
 
 const colors = ["pink-500", "red-500", "emerald-500", "cyan-500"];
 
 export default function Product({ product }) {
   const [color, setColor] = useState();
-  const [ size, setSize ] = useState()
+  const [size, setSize] = useState();
   const [selectedSize, setSelectedSize] = useState();
   const [selectedIndex, setSelectedIndex] = useState(0);
-
+  const [isLoved, setIsLoved] = useState(false)
 
   /* useEffect(() => {
     setColor(shuffle(colors).pop());
@@ -41,10 +43,21 @@ export default function Product({ product }) {
         >
           <Image src={product.image.url} height={500} width={500} />
         </div>
+        
+
         <div className="col-start-2 mt-32 ml-12">
-          <h1 className={`text-xl font-spacemono font-bold m-auto`}>
+          <h1 className="flex  text-xl font-spacemono font-bold m-auto">
             {product.title}
+            <button onClick={() => {setIsLoved(true)}}>
+              {isLoved ?
+              <BsSuitHeartFill size={20} className="mt-2 ml-44 fill-red-600 cursor-pointer" />
+              :
+              <BsSuitHeart size={20} className="mt-2 ml-44 cursor-pointer hover:fill-red-600" />
+            }
+              </button>
           </h1>
+          
+
 
           <div className="font-inconsolata mt-1 underline">
             <Link href="" className={`hover:text-${color}`}>
@@ -63,11 +76,11 @@ export default function Product({ product }) {
             <p>${product.price}</p>
           </div>
 
-          <div>
+          <div className="flex">
             <button
               className={`snipcart-add-item 
-                              font-spacemono  border-2 mt-2 py-1 px-2 border-emerald-500
-                              hover:cursor-cell hover:bg-emerald-500 hover:text-white border-dashed`}
+              font-spacemono  border-2 mt-2 py-1 px-2 border-emerald-500
+              hover:cursor-cell hover:bg-emerald-500 hover:text-white border-dashed`}
               data-item-id={product.id}
               data-item-price={product.price}
               data-item-image={product.image.url}
@@ -79,6 +92,7 @@ export default function Product({ product }) {
               Add to cart
             </button>
           </div>
+          
           <div className="border-b border-black mt-8 max-w-xs"></div>
 
           <div
@@ -141,6 +155,12 @@ export default function Product({ product }) {
             />
           </div>
         </div>
+          <div className="flex absolute bottom-3">
+            <FaCcStripe size={21} className="mt-3 hover:fill-emerald-600" />
+            <FaCcVisa size={21} className="mt-3 ml-3 hover:fill-pink-600" />
+            <FaCcAmex size={21} className="mt-3 ml-3 hover:fill-cyan-600" />
+            <FaCcMastercard size={21} className="mt-3 ml-3 hover:fill-amber-600" />
+          </div>
       </div>
     </>
   );
