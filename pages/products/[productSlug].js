@@ -10,12 +10,10 @@ const colors = ["pink-500", "red-500", "emerald-500", "cyan-500"];
 
 export default function Product({ product }) {
   const [color, setColor] = useState();
-<<<<<<< HEAD
   const [ size, setSize ] = useState()
-=======
   const [selectedSize, setSelectedSize] = useState();
   const [selectedIndex, setSelectedIndex] = useState(0);
->>>>>>> b2b769586a88c5c79f2dafa1900a2f458865224d
+
 
   /* useEffect(() => {
     setColor(shuffle(colors).pop());
@@ -26,11 +24,8 @@ export default function Product({ product }) {
     setSelectedSize(size);
   }
 
-<<<<<<< HEAD
   console.log(size);
 
-=======
->>>>>>> b2b769586a88c5c79f2dafa1900a2f458865224d
   return (
     <>
       <Head>
@@ -86,18 +81,6 @@ export default function Product({ product }) {
           </div>
           <div className="border-b border-black mt-8 max-w-xs"></div>
 
-<<<<<<< HEAD
-            <div className='flex gap-3 mt-8 font-syne cursor-pointer
-                            '>
-              <SizeButton onClick={() => {console.log("click")}} size="XS"/>
-              <SizeButton size="S"/>
-              <SizeButton size="M"/>
-              <SizeButton size="L"/>
-              <SizeButton size="XL"/>
-              <SizeButton size="XXL"/>
-              
-            </div>
-=======
           <div
             className="flex gap-3 mt-8 font-syne cursor-pointer
                             "
@@ -157,7 +140,6 @@ export default function Product({ product }) {
               handleClick={handleClick}
             />
           </div>
->>>>>>> b2b769586a88c5c79f2dafa1900a2f458865224d
         </div>
       </div>
     </>
