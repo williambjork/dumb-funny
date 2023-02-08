@@ -48,11 +48,11 @@ export default function Product({ product }) {
         <div className="col-start-2 mt-32 ml-12">
           <h1 className="flex  text-xl font-spacemono font-bold m-auto">
             {product.title}
-            <button onClick={() => {setIsLoved(true)}}>
+            <button onClick={() => {setIsLoved(isLoved ? false : true)}}>
               {isLoved ?
               <BsSuitHeartFill size={20} className="mt-2 ml-44 fill-red-600 cursor-pointer" />
               :
-              <BsSuitHeart size={20} className="mt-2 ml-44 cursor-pointer hover:fill-red-600" />
+              <BsSuitHeart size={20} className="mt-2 ml-44 cursor-pointer hover:fill-red-600 hover:animate-pulse" />
             }
               </button>
           </h1>
