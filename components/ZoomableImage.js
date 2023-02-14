@@ -21,10 +21,12 @@ function ZoomableImage({ src, width, height }) {
                                     setPosition({x: 0, y: 0})
                                     }
   
-    const transform = `translate(${position.x * 50}%, ${position.y * 50}%) scale(${isHovering ? 1.5 : 1})`;
+    const transform = `translate(${position.x * 50}%, ${position.y * 50}%) scale(${isHovering ? 2 : 1})`;
   
     return (
+        <div className='overflow-hidden'>
       <img
+        
         src={src}
         width={width}
         height={height}
@@ -33,6 +35,7 @@ function ZoomableImage({ src, width, height }) {
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       />
+      </div>
     );
   }
 
