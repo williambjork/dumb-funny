@@ -7,6 +7,7 @@ import Head from "next/head";
 import SizeButton from "../../components/SizeButton";
 import { FaCcAmex, FaCcMastercard, FaCcStripe, FaCcVisa } from "react-icons/fa";
 import { BsFillSuitHeartFill, BsSuitHeart, BsSuitHeartFill } from "react-icons/bs"
+import ZoomableImage from "../../components/ZoomableImage";
 
 const colors = ["pink-500", "red-500", "emerald-500", "cyan-500"];
 
@@ -41,7 +42,7 @@ export default function Product({ product }) {
           className="col-start-1 justify-center m-auto
                       "
         >
-          <Image src={product.image.url} height={500} width={500} />
+          <ZoomableImage src={product.image.url} height={500} width={500} />
         </div>
         
 
