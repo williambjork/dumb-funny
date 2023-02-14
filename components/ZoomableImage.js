@@ -21,7 +21,7 @@ function ZoomableImage({ src, width, height }) {
                                     setPosition({x: 0, y: 0})
                                     }
   
-    const transform = `translate(${position.x * 50}%, ${position.y * 50}%) scale(${isHovering ? 2 : 1})`;
+    const transform = `translate(${position.x * -85}%, ${position.y * -85}%) scale(${isHovering ? 2 : 1})`;
   
     return (
         <div className='overflow-hidden'>
