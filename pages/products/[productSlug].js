@@ -6,7 +6,11 @@ import Link from "next/link";
 import Head from "next/head";
 import SizeButton from "../../components/SizeButton";
 import { FaCcAmex, FaCcMastercard, FaCcStripe, FaCcVisa } from "react-icons/fa";
-import { BsFillSuitHeartFill, BsSuitHeart, BsSuitHeartFill } from "react-icons/bs"
+import {
+  BsFillSuitHeartFill,
+  BsSuitHeart,
+  BsSuitHeartFill,
+} from "react-icons/bs";
 import ZoomableImage from "../../components/ZoomableImage";
 import ImageOverlay from "../../components/ImageOverlay";
 import BlurScreen from "../../components/BlurScreen";
@@ -18,8 +22,8 @@ export default function Product({ product }) {
   const [size, setSize] = useState();
   const [selectedSize, setSelectedSize] = useState();
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const [isLoved, setIsLoved] = useState(false)
-  const [overlayActive, setOverlayActive] = useState(true)
+  const [isLoved, setIsLoved] = useState(false);
+  const [overlayActive, setOverlayActive] = useState(false);
 
   /* useEffect(() => {
     setColor(shuffle(colors).pop());
@@ -43,35 +47,43 @@ export default function Product({ product }) {
         <p>{product.categories.name}</p>
         <div
           className="col-start-1 justify-center m-auto"
-          onClick={() => {setOverlayActive(!overlayActive)}}
-          >
+          onClick={() => {
+            setOverlayActive(!overlayActive);
+          }}
+        >
           <ZoomableImage src={product.image.url} height={500} width={500} />
         </div>
-        {overlayActive == true ? 
-          <div 
-          onClick={() => {setOverlayActive(!overlayActive)}}>
-          <BlurScreen src={product.image.url} /> 
-          
-         
-         </div> 
-          : null}
-
-        
-        
+        {overlayActive == true ? (
+          <div
+            onClick={() => {
+              setOverlayActive(!overlayActive);
+            }}
+          >
+            <BlurScreen src={product.image.url} />
+          </div>
+        ) : null}
 
         <div className="col-start-2 mt-32 ml-12">
           <h1 className="flex  text-xl font-spacemono font-bold m-auto">
             {product.title}
-            <button onClick={() => {setIsLoved(isLoved ? false : true)}}>
-              {isLoved ?
-              <BsSuitHeartFill size={20} className="mt-2 ml-44 fill-red-600 cursor-pointer" />
-              :
-              <BsSuitHeart size={20} className="mt-2 ml-44 cursor-pointer hover:fill-red-600 hover:animate-pulse" />
-            }
-              </button>
+            <button
+              onClick={() => {
+                setIsLoved(isLoved ? false : true);
+              }}
+            >
+              {isLoved ? (
+                <BsSuitHeartFill
+                  size={20}
+                  className="mt-2 ml-44 fill-red-600 cursor-pointer"
+                />
+              ) : (
+                <BsSuitHeart
+                  size={20}
+                  className="mt-2 ml-44 cursor-pointer hover:fill-red-600 hover:animate-pulse"
+                />
+              )}
+            </button>
           </h1>
-          
-
 
           <div className="font-inconsolata mt-1 underline">
             <Link href="" className={`hover:text-${color}`}>
@@ -106,7 +118,7 @@ export default function Product({ product }) {
               Add to cart
             </button>
           </div>
-          
+
           <div className="border-b border-black mt-8 max-w-xs"></div>
 
           <div
@@ -169,12 +181,15 @@ export default function Product({ product }) {
             />
           </div>
         </div>
-          <div className="flex absolute bottom-3">
-            <FaCcStripe size={21} className="mt-3 hover:fill-emerald-600" />
-            <FaCcVisa size={21} className="mt-3 ml-3 hover:fill-pink-600" />
-            <FaCcAmex size={21} className="mt-3 ml-3 hover:fill-cyan-600" />
-            <FaCcMastercard size={21} className="mt-3 ml-3 hover:fill-amber-600" />
-          </div>
+        <div className="flex absolute bottom-3">
+          <FaCcStripe size={21} className="mt-3 hover:fill-emerald-600" />
+          <FaCcVisa size={21} className="mt-3 ml-3 hover:fill-pink-600" />
+          <FaCcAmex size={21} className="mt-3 ml-3 hover:fill-cyan-600" />
+          <FaCcMastercard
+            size={21}
+            className="mt-3 ml-3 hover:fill-amber-600"
+          />
+        </div>
       </div>
     </>
   );
