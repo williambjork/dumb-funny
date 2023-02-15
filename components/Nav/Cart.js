@@ -15,12 +15,12 @@ function Cart() {
               <BsCart2 />
             </div>
             <p className="ml-1 -mt-1">
-              {cart.items?.count === null ? 0 : cart.items?.count}
+              {cart.items?.count === undefined ? 0 : cart.items?.count}
               </p>
           </div>
 
           <div className="ml-6 hover:underline">
-            <p>${cart.subtotal?.toFixed(2)}</p>
+            <p>${cart.subtotal === undefined ? "00.00" : cart.subtotal.toFixed(2)}</p>
           </div>
 
         </button>
