@@ -9,6 +9,7 @@ import { FaCcAmex, FaCcMastercard, FaCcStripe, FaCcVisa } from "react-icons/fa";
 import { BsFillSuitHeartFill, BsSuitHeart, BsSuitHeartFill } from "react-icons/bs"
 import ZoomableImage from "../../components/ZoomableImage";
 import ImageOverlay from "../../components/ImageOverlay";
+import BlurScreen from "../../components/BlurScreen";
 
 const colors = ["pink-500", "red-500", "emerald-500", "cyan-500"];
 
@@ -43,11 +44,19 @@ export default function Product({ product }) {
         <div
           className="col-start-1 justify-center m-auto"
           onClick={() => {setOverlayActive(!overlayActive)}}
-        >
+          >
           <ZoomableImage src={product.image.url} height={500} width={500} />
         </div>
+        {overlayActive == true ? 
+          <div 
+          onClick={() => {setOverlayActive(!overlayActive)}}>
+          <BlurScreen src={product.image.url} /> 
+          
+         
+         </div> 
+          : null}
 
-        {overlayActive == true ? <ImageOverlay /> : null}
+        
         
 
         <div className="col-start-2 mt-32 ml-12">

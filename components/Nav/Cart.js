@@ -15,7 +15,7 @@ function Cart() {
               <BsCart2 />
             </div>
             <p className="ml-1 -mt-1">
-              {cart.items?.count === 0 ? 0 : cart.items?.count}
+              {cart.items?.count === null ? 0 : cart.items?.count}
               </p>
           </div>
 
