@@ -8,6 +8,7 @@ import SizeButton from "../../components/SizeButton";
 import { FaCcAmex, FaCcMastercard, FaCcStripe, FaCcVisa } from "react-icons/fa";
 import { BsFillSuitHeartFill, BsSuitHeart, BsSuitHeartFill } from "react-icons/bs"
 import ZoomableImage from "../../components/ZoomableImage";
+import ImageOverlay from "../../components/ImageOverlay";
 
 const colors = ["pink-500", "red-500", "emerald-500", "cyan-500"];
 
@@ -17,6 +18,7 @@ export default function Product({ product }) {
   const [selectedSize, setSelectedSize] = useState();
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [isLoved, setIsLoved] = useState(false)
+  const [overlayActive, setOverlayActive] = useState(true)
 
   /* useEffect(() => {
     setColor(shuffle(colors).pop());
@@ -39,11 +41,13 @@ export default function Product({ product }) {
       <div className="grid grid-cols-1 md:grid-cols-2 mt-20 ml-20 mr-12">
         <p>{product.categories.name}</p>
         <div
-          className="col-start-1 justify-center m-auto
-                      "
+          className="col-start-1 justify-center m-auto"
+          onClick={() => {setOverlayActive(!overlayActive)}}
         >
           <ZoomableImage src={product.image.url} height={500} width={500} />
         </div>
+
+        {overlayActive == true ? <ImageOverlay /> : null}
         
 
         <div className="col-start-2 mt-32 ml-12">
