@@ -24,9 +24,9 @@ export default function ProductCard({ title, price, url, brand, id, image }) {
       <h4 className="text-sm underline">{brand}</h4>
       <h3 className="font-spacemono mt-2"> ${price}</h3>
 
-      <button className="snipcart-add-item border cursor-cell border-black m-1 p-1 text-sm mt-1 font-spacemono hover:bg-black hover:text-white">
-        Add to cart
-      </button>
+       <button className="snipcart-add-item border cursor-pointer border-black m-1 p-1 text-sm mt-1 font-spacemono hover:bg-emerald-600 hover:border-emerald-500 hover:text-white">
+        Show me!
+  </button> 
 
     </div>
   );
