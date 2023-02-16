@@ -1,4 +1,4 @@
-import React from 'react'
+/* import React from 'react'
 import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
 
 export default function Category({category, products}) {
@@ -87,3 +87,4 @@ export async function getStaticPaths() {
     };
   } 
   
+*/
