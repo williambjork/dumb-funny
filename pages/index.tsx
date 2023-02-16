@@ -32,7 +32,7 @@ const Home: NextPage<HomeProps> = ({ home }) => {
     <div className="flex min-h-screen flex-col items-center justify-center py-2">
       <Head>
         <title>Dumb Funny</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/dumbfunny-favi.png" />
       </Head>
 
       <p className="font-spacemono pb-28">{home.heroText}</p>
