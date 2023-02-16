@@ -8,10 +8,25 @@ import ProductList from "../components/ProductList";
 import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
 import { homedir } from "os";
 
-const Home: NextPage = ({ home }) => {
+interface HomeProps {
+  home: {
+    heroLink: string;
+    heroText: string;
+    heroTitle: string;
+    name: string;
+    id: string;
+    slug: string;
+    heroBackground: {
+      width: number;
+      url: string;
+      height: number;
+    };
+  }
+}
+
+const Home: NextPage<HomeProps> = ({ home }) => {
   
 
-  
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center py-2">
