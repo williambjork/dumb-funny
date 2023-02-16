@@ -4,7 +4,19 @@ import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
 import ProductCard from "../components/ProductCard";
 import { imageConfigDefault } from "next/dist/shared/lib/image-config";
 
-export default function store({ products }) {
+interface ProductListProps {
+  products: {
+    price: number;
+    slug: string;
+    title: string;
+    brand: string;
+    image: {
+      url: string;
+    };
+  }[];
+}
+
+export default function store({ products }: ProductListProps) {
   console.log(products);
   return (
     <div className="">
