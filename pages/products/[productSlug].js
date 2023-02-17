@@ -43,10 +43,10 @@ export default function Product({ product }) {
         <meta name="description" content={`${product.title} is dumb funny`} />
       </Head>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 mt-20 ml-20 mr-12">
+      <div className=" md:grid md:grid-cols-2 md:mt-20 md:ml-20 md:mr-12">
         <p>{product.categories.name}</p>
         <div
-          className="col-start-1 justify-center m-auto"
+          className="col-start-1 justify-center m-auto flex flex-col md:flex-row"
           onClick={() => {
             setOverlayActive(!overlayActive);
           }}
@@ -63,7 +63,7 @@ export default function Product({ product }) {
           </div>
         ) : null}
 
-        <div className="col-start-2 mt-32 ml-12">
+        <div className="col-start-2 md:mt-32 md:ml-12 ml-24">
           <h1 className="flex  text-xl font-spacemono font-bold m-auto">
             {product.title}
             <button
@@ -181,8 +181,8 @@ export default function Product({ product }) {
             />
           </div>
         </div>
-        <div className="flex absolute bottom-3">
-          <FaCcStripe size={21} className="mt-3 hover:fill-emerald-600" />
+        <div className="flex absolute bottom-3 ">
+          <FaCcStripe size={21} className="mt-3 ml-12 md:ml-0 hover:fill-emerald-600" />
           <FaCcVisa size={21} className="mt-3 ml-3 hover:fill-pink-600" />
           <FaCcAmex size={21} className="mt-3 ml-3 hover:fill-cyan-600" />
           <FaCcMastercard
