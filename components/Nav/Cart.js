@@ -20,7 +20,7 @@ function Cart() {
           </div>
 
           <div className="ml-6 hover:underline">
-            <p>${cart.subtotal === undefined ? "00.00" : cart.subtotal.toFixed(2)}</p>
+            <p>${cart.subtotal === undefined ? "0.00" : cart.subtotal.toFixed(2)}</p>
           </div>
 
         </button>

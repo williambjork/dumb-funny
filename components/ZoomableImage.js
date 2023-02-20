@@ -36,8 +36,8 @@ function ZoomableImage({ src, width, height }) {
                                 
     return (
         <div className='overflow-hidden p-12'>
-      <img
-        
+      <Image
+        alt="Main image"
         src={src}
         width={width}
         height={height}

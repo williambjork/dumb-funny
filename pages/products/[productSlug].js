@@ -14,6 +14,7 @@ import {
 import ZoomableImage from "../../components/ZoomableImage";
 import ImageOverlay from "../../components/ImageOverlay";
 import BlurScreen from "../../components/BlurScreen";
+import SizeButtonList from "../../components/SizeButtonList";
 
 const colors = ["pink-500", "red-500", "emerald-500", "cyan-500"];
 
@@ -43,10 +44,10 @@ export default function Product({ product }) {
         <meta name="description" content={`${product.title} is dumb funny`} />
       </Head>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 mt-20 ml-20 mr-12">
+      <div className=" md:grid md:grid-cols-2 md:mt-20 md:ml-20 md:mr-12">
         <p>{product.categories.name}</p>
         <div
-          className="col-start-1 justify-center m-auto"
+          className="col-start-1 justify-center m-auto flex flex-col md:flex-row"
           onClick={() => {
             setOverlayActive(!overlayActive);
           }}
@@ -63,10 +64,11 @@ export default function Product({ product }) {
           </div>
         ) : null}
 
-        <div className="col-start-2 mt-32 ml-12">
+        <div className="col-start-2 md:mt-32 md:ml-12 ml-24">
           <h1 className="flex  text-xl font-spacemono font-bold m-auto">
             {product.title}
             <button
+              aria-label="Like"
               onClick={() => {
                 setIsLoved(isLoved ? false : true);
               }}
@@ -121,68 +123,20 @@ export default function Product({ product }) {
 
           <div className="border-b border-black mt-8 max-w-xs"></div>
 
-          <div
-            className="flex gap-3 mt-8 font-syne cursor-pointer
-                            "
-          >
-            <SizeButton
-              outOfStock={
-                product.sizes[0]?.stock.inventory === 0 ? true : false
-              }
-              size="XS"
-              index={1}
-              isSelected={selectedIndex === 1}
-              handleClick={handleClick}
-            />
-            <SizeButton
-              outOfStock={
-                product.sizes[1]?.stock.inventory === 0 ? true : false
-              }
-              size="S"
-              index={2}
-              isSelected={selectedIndex === 2}
-              handleClick={handleClick}
-            />
-            <SizeButton
-              outOfStock={
-                product.sizes[2]?.stock.inventory === 0 ? true : false
-              }
-              size="M"
-              index={3}
-              isSelected={selectedIndex === 3}
-              handleClick={handleClick}
-            />
-            <SizeButton
-              outOfStock={
-                product.sizes[3]?.stock.inventory === 0 ? true : false
-              }
-              size="L"
-              index={4}
-              isSelected={selectedIndex === 4}
-              handleClick={handleClick}
-            />
-            <SizeButton
-              outOfStock={
-                product.sizes[4]?.stock.inventory === 0 ? true : false
-              }
-              size="XL"
-              index={5}
-              isSelected={selectedIndex === 5}
-              handleClick={handleClick}
-            />
-            <SizeButton
-              outOfStock={
-                product.sizes[5]?.stock.inventory === 0 ? true : false
-              }
-              size="XXL"
-              index={6}
-              isSelected={selectedIndex === 6}
-              handleClick={handleClick}
-            />
-          </div>
+          <SizeButtonList
+            product={product}
+            size={size}
+            selectedSize={selectedSize}
+            handleClick={handleClick}
+            selectedIndex={selectedIndex}
+          />
         </div>
-        <div className="flex absolute bottom-3">
-          <FaCcStripe size={21} className="mt-3 hover:fill-emerald-600" />
+
+        <div className="flex absolute bottom-3 ">
+          <FaCcStripe
+            size={21}
+            className="mt-3 ml-12 md:ml-0 hover:fill-emerald-600"
+          />
           <FaCcVisa size={21} className="mt-3 ml-3 hover:fill-pink-600" />
           <FaCcAmex size={21} className="mt-3 ml-3 hover:fill-cyan-600" />
           <FaCcMastercard

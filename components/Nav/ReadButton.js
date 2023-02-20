@@ -6,12 +6,12 @@ export default function ReadButton({url}) {
 
     const handleClick = (e) => {
         e.preventDefault;
-        router.push(url);
+        router.push("https://soundcloud.com/lghthd");
     } 
   return (
     <div className=''>
     <button onClick={handleClick} className="font-syne font-bold hover:text-pink-500 px-3 py-1 text-sm ">
-      READ
+      LISTEN
       </button>
 
       </div>
