@@ -68,6 +68,7 @@ export default function Product({ product }) {
           <h1 className="flex  text-xl font-spacemono font-bold m-auto">
             {product.title}
             <button
+              aria-label="Like"
               onClick={() => {
                 setIsLoved(isLoved ? false : true);
               }}
@@ -130,7 +131,7 @@ export default function Product({ product }) {
             selectedIndex={selectedIndex}
           />
         </div>
-        
+
         <div className="flex absolute bottom-3 ">
           <FaCcStripe
             size={21}
