@@ -16,7 +16,8 @@ function Footer() {
                       William Björk 2023 & Beyond
                       </div>
                       <div className='absolute bottom-3 ml-3 hover:animate-spin cursor-pointer'>
-                        <Link href="https://github.com/williambjork">
+                        <Link href="https://github.com/williambjork"
+                                    aria-label="Check out my Github!">
                           <BsGlobe  size={20} />
                         </Link>
                       </div>
