@@ -6,7 +6,7 @@ function WatchButton({url}) {
 
     const handleClick = (e) => {
         e.preventDefault;
-        router.push(url);
+        router.push("https://www.youtube.com/watch?v=skobLzzlMn4&feature=youtu.be");
     } 
   return (
     <div className=''>
