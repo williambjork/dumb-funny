@@ -18,7 +18,6 @@ interface ProductListProps {
 }
 
 export default function store({ products }: ProductListProps) {
-  console.log(products);
   return (
     <>
       <Head>

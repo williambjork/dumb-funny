@@ -35,8 +35,6 @@ export default function Product({ product }) {
     setSelectedSize(size);
   }
 
-  console.log(size);
-
   return (
     <>
       <Head>
@@ -168,7 +166,7 @@ export async function getStaticPaths() {
     `,
   });
 
-  console.log("data", data.slug);
+  
 
   const paths = data.data.products.map((product) => {
     return {
@@ -225,7 +223,6 @@ export async function getStaticProps({ params }) {
     },
   });
 
-  console.log("params", params);
 
   const product = data.data.product;
 

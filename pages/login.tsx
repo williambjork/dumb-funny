@@ -14,7 +14,7 @@ export default function login() {
     const GoogleLogin = async () => {
         try {
             const result = await signInWithPopup(auth, googleProvider);
-            console.log(result.user)
+        
             router.push("/myAccount")
         } catch (error) {
             console.log("error")

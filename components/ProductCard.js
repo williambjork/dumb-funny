@@ -9,7 +9,6 @@ export default function ProductCard({ title, price, url, brand, id, image }) {
   const handleClick = (e) => {
     e.preventDefault;
     router.push(`/products/${url}`);
-    console.log("click");
   };
   return (
     <div

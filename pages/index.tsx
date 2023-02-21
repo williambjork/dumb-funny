@@ -68,7 +68,7 @@ export async function getStaticProps() {
   })
 
   const home = data.data.page;
-  console.log(home)
+ 
 
   return {
     props: {

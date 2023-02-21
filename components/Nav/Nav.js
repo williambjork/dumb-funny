@@ -23,7 +23,6 @@ export default function Nav() {
 
   const getData = async () => {
     if (loading) return;
-    if (!user) console.log("noUser");
   };
 
   useEffect(() => {
