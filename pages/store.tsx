@@ -3,6 +3,7 @@ import ProductList from "../components/ProductList";
 import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
 import ProductCard from "../components/ProductCard";
 import { imageConfigDefault } from "next/dist/shared/lib/image-config";
+import Head from "next/head";
 
 interface ProductListProps {
   products: {
@@ -19,10 +20,17 @@ interface ProductListProps {
 export default function store({ products }: ProductListProps) {
   console.log(products);
   return (
-    <div className="">
-      <h2 className="text-2xl flex justify-center m-auto font-bold font-spacemono mt-10 mb-6">Clothing</h2>
-      <ProductList products={products} />
-    </div>
+    <>
+      <Head>
+        <title>CONSUME!!</title>
+        <meta name="description" content={`dumb funny store`} />
+      </Head>
+
+      <div className="">
+        <h2 className="text-2xl flex justify-center m-auto font-bold font-spacemono mt-10 mb-6">Clothing</h2>
+        <ProductList products={products} />
+      </div>
+    </>
   );
 }
 

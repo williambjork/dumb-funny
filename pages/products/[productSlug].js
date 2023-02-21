@@ -76,12 +76,12 @@ export default function Product({ product }) {
               {isLoved ? (
                 <BsSuitHeartFill
                   size={20}
-                  className="mt-2 ml-44 fill-red-600 cursor-pointer"
+                  className="mt-2 ml-44 fill-red-500 cursor-pointer"
                 />
               ) : (
                 <BsSuitHeart
                   size={20}
-                  className="mt-2 ml-44 cursor-pointer hover:fill-red-600 hover:animate-pulse"
+                  className="mt-2 ml-44 cursor-pointer hover:fill-red-500 hover:animate-pulse"
                 />
               )}
             </button>
