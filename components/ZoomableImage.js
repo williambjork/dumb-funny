@@ -35,7 +35,7 @@ function ZoomableImage({ src, width, height }) {
     const transform = `translate(${position.x * -85}%, ${position.y * -85}%) scale(${isHovering ? 2 : 1})`;
                                 
     return (
-        <div className='overflow-hidden p-12'>
+        <div className='overflow-hidden p-12 cursor-crosshair'>
       <Image
         alt="Main image"
         src={src}
