@@ -13,7 +13,7 @@ function MobileShopButton({url}) {
   return (
     <div className=''>
         <button onClick={handleClick}  
-                className="font-syne  text-emerald-500 px-3 py-1 text-5xl font-bold">
+                className="font-syne  text-emerald-500 mt-1 px-3 py-1 text-5xl font-bold">
         SHOP
         </button>
     </div>

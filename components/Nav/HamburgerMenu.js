@@ -5,6 +5,8 @@ import MobileShopButton from ".//MobileButtons/MobileShopButton";
 import MobileListenButton from ".//MobileButtons/MobileListenButton";
 import MobileWatchButton from ".//MobileButtons/MobileWatchButton";
 import MobileMyAccountButton from ".//MobileButtons/MobileMyAccountButton";
+import MobileLoginButton from ".//MobileButtons/MobileLoginButton";
+import MobileSignUpButton from ".//MobileButtons/MobileSignupButton";
 import LoginButton from "./LoginButton";
 import MyAccountButton from "./MyAccountButton";
 import ReadButton from "./ReadButton";
@@ -50,8 +52,8 @@ function HamburgerMenu({ user, loading }) {
           </>
         ) : (
             <>
-            <LoginButton url="/login" />
-            <SignUpButton url="/signup" />
+            <MobileLoginButton url="/login" />
+            <MobileSignUpButton url="/signup" />
           </>
         )}
         </div>
