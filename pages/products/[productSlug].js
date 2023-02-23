@@ -15,6 +15,7 @@ import ZoomableImage from "../../components/ZoomableImage";
 import ImageOverlay from "../../components/ImageOverlay";
 import BlurScreen from "../../components/BlurScreen";
 import SizeButtonList from "../../components/SizeButtonList";
+import SizeDropdown from "../../components/SizeDropdown";
 
 const colors = ["pink-500", "red-500", "emerald-500", "cyan-500"];
 
@@ -33,6 +34,7 @@ export default function Product({ product }) {
   function handleClick(index, size) {
     setSelectedIndex(index);
     setSelectedSize(size);
+    console.log(size)
   }
 
   return (
@@ -119,15 +121,20 @@ export default function Product({ product }) {
             </button>
           </div>
 
-          <div className="border-b border-black mt-8 max-w-xs"></div>
+        
 
+        <div className="border-b border-black mt-8 max-w-xs"></div>
+
+          <div className="-ml-12">
           <SizeButtonList
+            
             product={product}
             size={size}
             selectedSize={selectedSize}
             handleClick={handleClick}
             selectedIndex={selectedIndex}
           />
+          </div>
         </div>
 
         <div className="flex  md:flex-row flex-col absolute bottom-3 ">
