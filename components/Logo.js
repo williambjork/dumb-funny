@@ -3,13 +3,13 @@ import { useRouter } from 'next/router';
 import React from 'react'
 import logo from "../src/images/dumbfunny-logo.png"
 
-function Logo() {
+function Logo({size}) {
 
   const router = useRouter();
 
   return (
     <div>
-        <Image className='cursor-pointer' onClick={() => {router.push("/")}} src={logo} height={33} alt="Dumb Funny Logo"/>
+        <Image className='cursor-pointer' onClick={() => {router.push("/")}} src={logo} height={size} alt="Dumb Funny Logo"/>
     </div>
   )
 }

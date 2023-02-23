@@ -24,14 +24,16 @@ function HamburgerMenu({ user, loading }) {
       <CgMenuCheese size={30} />
     </div>
   ) : (
-    <div className="blur-screen flex justify-center items-center">
-      <div className="flex-row">
       <div className="ml-16"
       onClick={() => {
         setOpen(!open);
       }}
     >
-        <VscChromeClose size={25} />
+    <div className="blur-screen flex justify-center items-center">
+        <div className="absolute top-5 right-20">
+        <VscChromeClose size={35} />
+        </div>
+      <div className="flex-row">
         <HomeButton url="/" />
         <StoreButton url="/store" />
         <ReadButton url="/read" />

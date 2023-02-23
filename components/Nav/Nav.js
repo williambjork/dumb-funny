@@ -19,8 +19,6 @@ import Cart from "./Cart"
 export default function Nav() {
   const [user, loading] = useAuthState(auth);
 
-  
-
   const getData = async () => {
     if (loading) return;
   };
@@ -34,7 +32,7 @@ export default function Nav() {
       <nav className="grid grid-cols-3  md:top-0 justify-center m-auto  py-3 border-b">
         <div className="flex-initial absolute left-12 ">
           <div className="min-w-12 hidden md:inline ">
-            <Logo />
+            <Logo size={33} />
           </div>
         </div>
         <div className="col-start-2 col-span-2 flex ">

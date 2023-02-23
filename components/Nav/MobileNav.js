@@ -30,7 +30,7 @@ function MobileNav() {
           <Cart />
         </div>
         <div className="col-span-1 flex justify-center">
-          <Logo />
+          <Logo size={33} />
         </div>
 
         <div className="col-span-1 ml-6  flex justify-start">
