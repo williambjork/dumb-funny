@@ -62,7 +62,7 @@ export default function Product({ product }) {
           </div>
         ) : null}
 
-        <div className="col-start-2 md:mt-32 md:ml-12 ml-24">
+        <div className="col-start-2 mb-12 mx-32 md:mt-32 md:ml-12 ml-24">
           <h1 className="flex  text-xl font-spacemono font-bold m-auto">
             {product.title}
             <button
@@ -130,16 +130,16 @@ export default function Product({ product }) {
           />
         </div>
 
-        <div className="flex absolute bottom-3 ">
+        <div className="flex  md:flex-row flex-col absolute bottom-3 ">
           <FaCcStripe
             size={21}
-            className="mt-3 ml-12 md:ml-0 hover:fill-emerald-600"
+            className="mt-3 ml-3 md:ml-0 hover:fill-emerald-600"
           />
           <FaCcVisa size={21} className="mt-3 ml-3 hover:fill-pink-600" />
           <FaCcAmex size={21} className="mt-3 ml-3 hover:fill-cyan-600" />
           <FaCcMastercard
             size={21}
-            className="mt-3 ml-3 hover:fill-amber-600"
+            className="mt-3 ml-3 mb-9 md:mb-0 hover:fill-amber-600"
           />
         </div>
       </div>
