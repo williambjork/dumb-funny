@@ -12,7 +12,7 @@ module.exports = {
         inconsolata: "Inconsolata, serif",
         spacemono: "SpaceMono, serif",
         spacemonobold: "SpaceMonoBold, serif",
-        syne: "Syne, serif"
+        syne: "Syne"
         
       },
     },

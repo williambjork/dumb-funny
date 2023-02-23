@@ -19,7 +19,7 @@ function Cart() {
               </p>
           </div>
 
-          <div className="ml-6 hover:underline hidden sm:block">
+          <div className="ml-6 hover:underline hidden lg:block">
             <p>${cart.subtotal === undefined ? "0.00" : cart.subtotal.toFixed(2)}</p>
           </div>
 

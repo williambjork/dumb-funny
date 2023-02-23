@@ -22,7 +22,7 @@ function HamburgerMenu({ user, loading }) {
   return (
     <>
   {open ? (
-    <div className="ml-16"
+    <div className="ml-16 cursor-pointer"
       onClick={() => {
         setOpen(!open);
       }}
@@ -37,7 +37,7 @@ function HamburgerMenu({ user, loading }) {
       }}
     >
     <div className="blur-screen flex justify-center items-center">
-        <div className="absolute top-5 right-20">
+        <div className="absolute top-5 cursor-pointer right-20">
         <VscChromeClose size={35} />
         </div>
       <div className="flex-row">
