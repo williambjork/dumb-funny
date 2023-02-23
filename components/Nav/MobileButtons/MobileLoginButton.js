@@ -10,11 +10,11 @@ function MobileLogin({url}) {
   };
   return (
     <div className="">
-      <div className="border-t border-black my-3"></div>
+      
       <button
         onClick={handleClick}
-        className="font-syne hover:bg-black hover:text-white border-black mr-3
-                rounded-full px-4 mt-3 py-1 text-2xl font-bold  border"
+        className="font-syne hover:bg-black bg-white hover:text-white border-black mr-3
+                rounded-full px-4 mt-2 py-1 text-2xl font-bold  border"
       >
         LOGIN
       </button>

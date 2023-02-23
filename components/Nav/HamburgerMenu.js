@@ -52,8 +52,11 @@ function HamburgerMenu({ user, loading }) {
           </>
         ) : (
             <>
+                <div className="border-t border-black my-3"></div>
+            <div className="flex">
             <MobileLoginButton url="/login" />
             <MobileSignUpButton url="/signup" />
+          </div>
           </>
         )}
         </div>
