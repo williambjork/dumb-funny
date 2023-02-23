@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import Cart from "./Cart";
-import HomeButton from "./HomeButton";
+import MobileHomeButton from ".//MobileButtons/MobileHomeButton";
+import MobileShopButton from ".//MobileButtons/MobileShopButton";
+import MobileListenButton from ".//MobileButtons/MobileListenButton";
+import MobileWatchButton from ".//MobileButtons/MobileWatchButton";
+import MobileMyAccountButton from ".//MobileButtons/MobileMyAccountButton";
 import LoginButton from "./LoginButton";
 import MyAccountButton from "./MyAccountButton";
 import ReadButton from "./ReadButton";
@@ -11,7 +15,7 @@ import { CgMenuCheese } from "react-icons/cg";
 import { VscChromeClose } from "react-icons/vsc";
 
 function HamburgerMenu({ user, loading }) {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
 
   return (
     <>
@@ -21,6 +25,7 @@ function HamburgerMenu({ user, loading }) {
         setOpen(!open);
       }}
     >
+        
       <CgMenuCheese size={30} />
     </div>
   ) : (
@@ -34,14 +39,14 @@ function HamburgerMenu({ user, loading }) {
         <VscChromeClose size={35} />
         </div>
       <div className="flex-row">
-        <HomeButton url="/" />
-        <StoreButton url="/store" />
-        <ReadButton url="/read" />
-        <WatchButton url="/watch" />
+        <MobileHomeButton url="/" />
+        <MobileShopButton url="/store" />
+        <MobileListenButton url="https://soundcloud.com/lghthd" />
+        <MobileWatchButton url="/watch" />
 
         {user ? (
             <>
-            <MyAccountButton url="/myAccount" />
+            <MobileMyAccountButton url="/myAccount" />
           </>
         ) : (
             <>
