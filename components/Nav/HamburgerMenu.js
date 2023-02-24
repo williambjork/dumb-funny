@@ -14,6 +14,7 @@ import SignUpButton from "./SignUpButton";
 import StoreButton from "./StoreButton";
 import WatchButton from "./WatchButton";
 import { CgMenuCheese } from "react-icons/cg";
+import { VscMenu } from "react-icons/vsc";
 import { VscChromeClose } from "react-icons/vsc";
 
 function HamburgerMenu({ user, loading }) {
@@ -28,7 +29,7 @@ function HamburgerMenu({ user, loading }) {
       }}
     >
         
-      <CgMenuCheese size={30} />
+      <VscMenu size={25} />
     </div>
   ) : (
       <div className="ml-16"
