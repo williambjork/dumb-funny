@@ -3,7 +3,7 @@ import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import Router, { useRouter } from "next/router";
-import { AiFillGoogleCircle } from "react-icons/ai";
+import { SiGoogle } from "react-icons/si";
 
 export default function login() {
   const [user, loading] = useAuthState(auth);
@@ -28,7 +28,7 @@ export default function login() {
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center pb-12">
-      <AiFillGoogleCircle className="mb-3" size={30} />
+      <SiGoogle className="mb-6" size={30} />
         <button
           className="flex font-spacemono border p-3 border-black
                             hover:border-dashed hover:border-emerald-500 hover:text-emerald-500"
