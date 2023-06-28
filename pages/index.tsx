@@ -7,6 +7,7 @@ import { useContext } from "react";
 import ProductList from "../components/ProductList";
 import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
 import { homedir } from "os";
+import Link from "next/link";
 
 interface HomeProps {
   home: {
@@ -35,7 +36,8 @@ const Home: NextPage<HomeProps> = ({ home }) => {
         <link rel="icon" href="/dumbfunny-favi.png" />
       </Head>
 
-      <p className="font-spacemono pb-28">{home.heroText}</p>
+      <p className="font-spacemono pb-6">{home.heroText}</p>
+      <Link className="text-emerald-500 hover:text-black pb-12" href="/store">shop</Link>
 
       
     </div>
