@@ -26,9 +26,10 @@ export default function login() {
    }), [];
 
   return (
-    <div>
-        <div>Login</div>
-        <button onClick={GoogleLogin}>Sign in with Google</button>
+    <div className='flex min-h-screen flex-col items-center justify-center pb-12'>
+        
+        <button className='font-spacemono border p-3 border-black
+                            hover:border-dashed hover:border-emerald-500 hover:text-emerald-500' onClick={GoogleLogin}>Sign in with Google</button>
     </div>
   )
 }
