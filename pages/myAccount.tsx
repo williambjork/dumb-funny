@@ -28,7 +28,7 @@ function myAccount() {
     <h3 className='font-spacemono pt-5'>{user?.displayName}</h3>
     <h3 className='font-spacemono'>{user?.email}</h3>
     <button className='mt-6 flex font-spacemono border p-3 border-black
-                            hover:border-dashed  hover:border-emerald-500 hover:text-emerald-500' onClick={() => auth.signOut()}>Sign Out</button>
+                            hover:border-dashed    hover:border-emerald-500 hover:text-emerald-500' onClick={() => auth.signOut()}>Sign Out</button>
     </div>
   )
 }
