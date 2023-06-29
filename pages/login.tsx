@@ -28,10 +28,10 @@ export default function login() {
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center pb-12">
-      <SiGoogle className="mb-6" size={30} />
+      <SiGoogle className="mb-6 hover:animate-spin" size={30} />
         <button
           className="flex font-spacemono border p-3 border-black
-                            hover:border-dashed hover:border-emerald-500 hover:text-emerald-500"
+                            hover:border-dashed  hover:border-emerald-500 hover:text-emerald-500"
           onClick={GoogleLogin}
         >
           Sign in with Google
