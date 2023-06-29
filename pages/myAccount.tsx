@@ -24,7 +24,7 @@ function myAccount() {
   return (
     <div className='flex min-h-screen flex-col items-center justify-center pb-12'>
     
-    <img className="rounded-full w-30 h-30 grayscale" src={loading ? "Loading" : user?.photoURL} alt="profile" />
+    <img className="rounded-full w-30 h-30 filter-green" src={loading ? "Loading" : user?.photoURL} alt="profile" />
     <h3 className='font-spacemono pt-5'>{user?.displayName}</h3>
     <h3 className='font-spacemono'>{user?.email}</h3>
     <button className='mt-6 flex font-spacemono border p-3 border-black
