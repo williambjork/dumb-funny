@@ -4,7 +4,12 @@ import { useAuthState } from 'react-firebase-hooks/auth'
 import { useRouter} from 'next/router'
 import { useEffect } from 'react';
 
+
+
+
 function myAccount() {
+
+  
 
   const router = useRouter();
 

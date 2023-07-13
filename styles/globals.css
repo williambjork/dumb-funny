@@ -65,3 +65,22 @@
   .filter-green {
     filter: grayscale(100%) brightness(58%) sepia(300%) hue-rotate(99deg) saturate(250%)
   }
+
+  .shop {
+  background:
+  linear-gradient(currentColor 0 0) 0 0,
+  linear-gradient(currentColor 0 0) 0 0,
+  linear-gradient(currentColor 0 0) 0 100%,
+  linear-gradient(currentColor 0 0) 0 100%,
+  linear-gradient(currentColor 0 0) 100% 0,
+  linear-gradient(currentColor 0 0) 100% 0,
+  linear-gradient(currentColor 0 0) 100% 100%,
+  linear-gradient(currentColor 0 0) 100% 100%;
+background-size: var(--d, 0) 3px, 3px var(--d, 0);
+background-repeat: no-repeat;
+transition: 0.5s;
+}
+.shop:hover {
+--d: 20px;
+}
+  

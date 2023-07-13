@@ -37,7 +37,7 @@ const Home: NextPage<HomeProps> = ({ home }) => {
       </Head>
 
       <p className="font-spacemono pb-6">{home.heroText}</p>
-      <Link className="text-emerald-500 hover:text-black pb-12" href="/store">shop</Link>
+      <Link className="text-emerald-500 shop hover:text-black p-3" href="/store">shop</Link>
 
       
     </div>
