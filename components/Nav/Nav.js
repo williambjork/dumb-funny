@@ -42,7 +42,7 @@ export default function Nav() {
 
           <div className="flex">
             <StoreButton url="/store" />
-            <ReadButton url="/read" />
+            <ReadButton url="/listen" />
             <WatchButton url="/watch" />
           </div>
 

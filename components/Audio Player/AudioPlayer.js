@@ -1,6 +1,8 @@
 import { React, useState } from "react";
 import { HiPlay, HiPause } from "react-icons/Hi";
 import { TbRewindBackward10, TbRewindForward10 } from "react-icons/Tb";
+import { AiFillPlaySquare } from "react-icons/Ai"
+import { IoReturnUpBack } from "react-icons/Io"
 
 function AudioPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -8,17 +10,20 @@ function AudioPlayer() {
     <div>
       <audio src="https%3A//api.soundcloud.com/tracks/615648570"></audio>
       <button>
+        <IoReturnUpBack />
         <TbRewindBackward10 size={25} className="mb-4 mr-1 hover:fill-emerald-500" />
       </button>
       <button
         onClick={() => {
-          setIsPlaying(!false);
+          setIsPlaying(!isPlaying);
         }}
       >
-        {isPlaying ? <HiPause size={50} className="hover:fill-emerald-500" /> : <HiPlay size={50} />}
+        {isPlaying ? <HiPause size={50} className="hover:fill-emerald-500" /> 
+                      : 
+                     <AiFillPlaySquare size={50} className="hover:fill-emerald-500"/>}
       </button>
       <button>
-        <TbRewindForward10 size={25} className="mb-4 ml-1" />
+        <TbRewindForward10 size={25} className="mb-4 ml-1 " />
       </button>
     </div>
   );
